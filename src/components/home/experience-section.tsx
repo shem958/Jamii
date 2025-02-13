@@ -40,7 +40,7 @@ const ExperienceSection: React.FC = () => {
             }}
           >
             <Image
-              src="/assets/jamii-products.jpg"
+              src="/assets/JTea.png"
               alt="Jamii Products"
               fill
               style={{ objectFit: "contain", padding: "20px" }}
@@ -59,7 +59,7 @@ const ExperienceSection: React.FC = () => {
             }}
           >
             <Image
-              src="/assets/cereals.jpg"
+              src="/assets/cereals.png"
               alt="Various Cereals"
               fill
               style={{ objectFit: "cover" }}
