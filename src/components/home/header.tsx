@@ -35,6 +35,7 @@ const Header: React.FC = () => {
         <Button variant="contained" color="secondary">
           Get in Touch
         </Button>
+
         <IconButton>
           <Image
             src="/assets/menu-icon.svg"
