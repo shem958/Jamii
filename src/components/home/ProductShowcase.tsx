@@ -15,19 +15,19 @@ const products = [
     title: "Nutritious Lentils",
     description:
       "Perfect for hearty stews, packed with protein and fiber to nourish your body.",
-    image: "/image4.png", // Update with actual image URL
+    image: "/assets/all-original.jpg", // Update with actual image URL
   },
   {
     title: "Versatile Beans",
     description:
       "Add nutrition and flavor to countless recipes for a nutritious meal option.",
-    image: "/image5.png", // Update with actual image URL
+    image: "/assets/beans.jpg", // Update with actual image URL
   },
   {
     title: "Fresh Dry Maize",
     description:
       "Ready for your favorite culinary creations and packed with wholesome flavor.",
-    image: "/image4.png", // Update with actual image URL
+    image: "/assets/maize.jpg", // Update with actual image URL
   },
 ];
 
