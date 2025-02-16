@@ -4,32 +4,25 @@ import Image from "next/image";
 
 const products = [
   {
-    src: "/assets/images/lentils.jpg",
+    src: "/assets/all-original.jpg",
     alt: "Lentils",
     title: "Nutrient-rich Lentils",
     description:
       "Explore our selection of high-quality lentils, perfect for nourishing meals.",
   },
   {
-    src: "/assets/images/beans.jpg",
+    src: "/assets/beans.jpg",
     alt: "Beans",
     title: "Versatile Beans",
     description:
       "Discover various types of beans that add flavor and nutrition to your dishes.",
   },
   {
-    src: "/assets/images/maize.jpg",
+    src: "/assets/maize.jpg",
     alt: "Dry Maize",
     title: "Fresh Dry Maize",
     description:
       "Enjoy fresh dry maize, ideal for traditional and modern recipes.",
-  },
-  {
-    src: "/assets/images/sorghum.jpg",
-    alt: "Sorghum Flour",
-    title: "Gluten-Free Sorghum Flour",
-    description:
-      "Discover our gluten-free sorghum flour, perfect for baking and traditional recipes.",
   },
 ];
 
