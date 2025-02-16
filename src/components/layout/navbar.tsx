@@ -7,11 +7,12 @@ import {
   Button,
   Menu,
   MenuItem,
+  Box,
+  Container,
   IconButton,
-  Stack,
 } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import Image from "next/image";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const Navbar: React.FC = () => {
   const [productsAnchorEl, setProductsAnchorEl] = useState<null | HTMLElement>(
@@ -35,111 +36,116 @@ const Navbar: React.FC = () => {
 
   return (
     <AppBar position="static" color="transparent" elevation={0}>
-      <Toolbar
-        sx={{ justifyContent: "space-between", px: { xs: 2, md: 4 }, py: 2 }}
-      >
-        <Typography
-          variant="h6"
-          sx={{ fontWeight: 700, color: "primary.main", cursor: "pointer" }}
-        >
-          Jamii Cereals and Gen Shop
-        </Typography>
-
-        <Stack
-          direction="row"
-          spacing={4}
-          alignItems="center"
-          sx={{ display: { xs: "none", md: "flex" } }}
-        >
-          <Button
-            endIcon={<KeyboardArrowDownIcon />}
-            onClick={handleMenuOpen(setProductsAnchorEl)}
+      <Container maxWidth="xl">
+        <Toolbar sx={{ justifyContent: "space-between", py: 2, px: 0 }}>
+          <Typography
+            variant="h6"
             sx={{
+              fontWeight: 700,
               color: "primary.main",
-              textTransform: "none",
-              fontWeight: 600,
-              "&:hover": { backgroundColor: "transparent" },
+              cursor: "pointer",
+              fontSize: "1.25rem",
             }}
           >
-            Products
-          </Button>
-          <Menu
-            anchorEl={productsAnchorEl}
-            open={Boolean(productsAnchorEl)}
-            onClose={handleMenuClose(setProductsAnchorEl)}
-          >
-            <MenuItem onClick={handleMenuClose(setProductsAnchorEl)}>
-              Product Showcase
-            </MenuItem>
-            <MenuItem onClick={handleMenuClose(setProductsAnchorEl)}>
-              Shop Online
-            </MenuItem>
-          </Menu>
+            Jamii Cereals and Gen shop
+          </Typography>
 
-          <Button
-            endIcon={<KeyboardArrowDownIcon />}
-            onClick={handleMenuOpen(setCompanyAnchorEl)}
-            sx={{
-              color: "primary.main",
-              textTransform: "none",
-              fontWeight: 600,
-              "&:hover": { backgroundColor: "transparent" },
-            }}
+          <Box
+            sx={{ display: { xs: "none", md: "flex" }, alignItems: "center" }}
           >
-            Company
-          </Button>
-          <Menu
-            anchorEl={companyAnchorEl}
-            open={Boolean(companyAnchorEl)}
-            onClose={handleMenuClose(setCompanyAnchorEl)}
-          >
-            <MenuItem onClick={handleMenuClose(setCompanyAnchorEl)}>
-              About Us
-            </MenuItem>
-            <MenuItem onClick={handleMenuClose(setCompanyAnchorEl)}>
-              Visit Us
-            </MenuItem>
-            <MenuItem onClick={handleMenuClose(setCompanyAnchorEl)}>
-              Customer Testimonials
-            </MenuItem>
-          </Menu>
+            <Button
+              endIcon={<KeyboardArrowDownIcon />}
+              onClick={handleMenuOpen(setProductsAnchorEl)}
+              sx={{
+                color: "primary.main",
+                textTransform: "none",
+                fontWeight: 500,
+                mr: 3,
+                "&:hover": { backgroundColor: "transparent" },
+              }}
+            >
+              Products
+            </Button>
+            <Menu
+              anchorEl={productsAnchorEl}
+              open={Boolean(productsAnchorEl)}
+              onClose={handleMenuClose(setProductsAnchorEl)}
+            >
+              <MenuItem onClick={handleMenuClose(setProductsAnchorEl)}>
+                Product Showcase
+              </MenuItem>
+              <MenuItem onClick={handleMenuClose(setProductsAnchorEl)}>
+                Shop Online
+              </MenuItem>
+            </Menu>
 
-          <Button
-            sx={{
-              color: "primary.main",
-              textTransform: "none",
-              fontWeight: 600,
-              "&:hover": { backgroundColor: "transparent" },
-            }}
-          >
-            Frequently Asked Questions
-          </Button>
+            <Button
+              endIcon={<KeyboardArrowDownIcon />}
+              onClick={handleMenuOpen(setCompanyAnchorEl)}
+              sx={{
+                color: "primary.main",
+                textTransform: "none",
+                fontWeight: 500,
+                mr: 3,
+                "&:hover": { backgroundColor: "transparent" },
+              }}
+            >
+              Company
+            </Button>
+            <Menu
+              anchorEl={companyAnchorEl}
+              open={Boolean(companyAnchorEl)}
+              onClose={handleMenuClose(setCompanyAnchorEl)}
+            >
+              <MenuItem onClick={handleMenuClose(setCompanyAnchorEl)}>
+                About Us
+              </MenuItem>
+              <MenuItem onClick={handleMenuClose(setCompanyAnchorEl)}>
+                Visit Us
+              </MenuItem>
+              <MenuItem onClick={handleMenuClose(setCompanyAnchorEl)}>
+                Customer Testimonials
+              </MenuItem>
+            </Menu>
 
-          <Button
-            variant="contained"
-            color="secondary"
-            sx={{
-              textTransform: "none",
-              borderRadius: "4px",
-              px: 3,
-              py: 1,
-              color: "common.white",
-              "&:hover": { backgroundColor: "secondary.dark" },
-            }}
-          >
-            Get in Touch
-          </Button>
-        </Stack>
+            <Button
+              sx={{
+                color: "primary.main",
+                textTransform: "none",
+                fontWeight: 500,
+                mr: 3,
+                "&:hover": { backgroundColor: "transparent" },
+              }}
+            >
+              Frequently Asked Questions
+            </Button>
 
-        <IconButton sx={{ display: { xs: "flex", md: "none" } }}>
-          <Image
-            src="/assets/menu-icon.png"
-            alt="Menu"
-            width={30}
-            height={30}
-          />
-        </IconButton>
-      </Toolbar>
+            <Button
+              variant="contained"
+              color="secondary"
+              sx={{
+                textTransform: "none",
+                borderRadius: "4px",
+                px: 3,
+                py: 1,
+                fontWeight: 500,
+                color: "common.white",
+                backgroundColor: "#55a630",
+                "&:hover": { backgroundColor: "#458a26" },
+              }}
+            >
+              Get in Touch
+            </Button>
+          </Box>
+
+          <IconButton
+            sx={{ display: { xs: "flex", md: "none" }, color: "primary.main" }}
+            aria-label="menu"
+          >
+            <MenuIcon />
+          </IconButton>
+        </Toolbar>
+      </Container>
     </AppBar>
   );
 };
