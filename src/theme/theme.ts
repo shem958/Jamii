@@ -3,20 +3,20 @@ import { createTheme, ThemeOptions } from "@mui/material/styles";
 const themeOptions: ThemeOptions = {
   palette: {
     primary: {
-      main: "#3e3e3e", // Dark gray used for text and buttons
+      main: "#3e3e3e", // Dark gray for text and buttons
       light: "#6c6c6c",
       dark: "#2a2a2a",
       contrastText: "#ffffff",
     },
     secondary: {
-      main: "#55a630", // Green used for buttons and accents
+      main: "#55a630", // Green for buttons and accents
       light: "#78c956",
       dark: "#458a26",
       contrastText: "#ffffff",
     },
     background: {
       default: "#ffffff",
-      paper: "#f9f9f9", // Light gray background for hero section
+      paper: "#f9f9f9", // Light gray background for sections
     },
     text: {
       primary: "#3e3e3e",
@@ -34,19 +34,38 @@ const themeOptions: ThemeOptions = {
       fontWeight: 700,
       lineHeight: 1.2,
     },
+    h2: {
+      fontSize: "2.5rem",
+      fontWeight: 700,
+      lineHeight: 1.2,
+    },
+    h3: {
+      fontSize: "2rem",
+      fontWeight: 700,
+      lineHeight: 1.2,
+    },
+    h4: {
+      fontSize: "1.75rem",
+      fontWeight: 700,
+      lineHeight: 1.2,
+    },
+    h5: {
+      fontSize: "1.5rem",
+      fontWeight: 600,
+      lineHeight: 1.2,
+    },
     h6: {
       fontSize: "1.25rem",
-      fontWeight: 700,
-      color: "#3e3e3e",
+      fontWeight: 600,
+      lineHeight: 1.2,
     },
     body1: {
       fontSize: "1.125rem",
-      color: "#3e3e3e",
       lineHeight: 1.5,
     },
     body2: {
-      fontSize: "0.875rem",
-      color: "#3e3e3e",
+      fontSize: "1rem",
+      lineHeight: 1.5,
     },
     button: {
       textTransform: "none",
