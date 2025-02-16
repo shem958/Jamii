@@ -154,7 +154,12 @@ const Header: React.FC = () => {
       </Stack>
 
       <IconButton sx={{ display: { xs: "flex", md: "none" } }}>
-        <Image src="/assets/menu-icon.png" alt="Menu" width={30} height={30} />
+        <Image
+          src="/public/assets/log06.png"
+          alt="Menu"
+          width={30}
+          height={30}
+        />
       </IconButton>
     </Box>
   );
