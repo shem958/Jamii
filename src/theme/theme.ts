@@ -14,6 +14,22 @@ const theme = createTheme({
     },
     typography: {
         fontFamily: 'Montserrat, sans-serif',
+        h1: {
+            fontSize: "3rem", // Adjusted font size
+            fontWeight: 700,
+        },
+        body1: {
+            fontSize: "1rem", // Adjusted font size
+            color: "#3e3e3e",
+        },
+        body2: {
+            fontSize: "0.875rem", // Adjusted font size
+            color: "#3e3e3e",
+        },
+        overline: {
+            fontSize: "0.875rem", // Adjusted font size
+            fontWeight: 700,
+        },
     },
 });
 
