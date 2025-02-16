@@ -48,7 +48,7 @@ const Header: React.FC = () => {
       <Typography
         variant="h6"
         sx={{
-          fontWeight: 600,
+          fontWeight: 700,
           fontSize: "1.25rem",
           color: "primary.main",
           "&:hover": {
@@ -59,7 +59,6 @@ const Header: React.FC = () => {
         Jamii Cereals and Gen shop
       </Typography>
 
-      {/* Desktop Navigation */}
       <Stack
         direction="row"
         spacing={4}
@@ -72,7 +71,7 @@ const Header: React.FC = () => {
           sx={{
             color: "primary.main",
             textTransform: "none",
-            fontWeight: 500,
+            fontWeight: 600,
             "&:hover": {
               backgroundColor: "transparent",
             },
@@ -99,7 +98,7 @@ const Header: React.FC = () => {
           sx={{
             color: "primary.main",
             textTransform: "none",
-            fontWeight: 500,
+            fontWeight: 600,
             "&:hover": {
               backgroundColor: "transparent",
             },
@@ -127,7 +126,7 @@ const Header: React.FC = () => {
           sx={{
             color: "primary.main",
             textTransform: "none",
-            fontWeight: 500,
+            fontWeight: 600,
             "&:hover": {
               backgroundColor: "transparent",
             },
@@ -154,7 +153,6 @@ const Header: React.FC = () => {
         </Button>
       </Stack>
 
-      {/* Mobile Menu */}
       <IconButton sx={{ display: { xs: "flex", md: "none" } }}>
         <Image src="/assets/menu-icon.png" alt="Menu" width={30} height={30} />
       </IconButton>
