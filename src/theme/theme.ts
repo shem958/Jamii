@@ -22,6 +22,10 @@ const theme = createTheme({
             fontSize: "2.5rem", // Adjusted font size
             fontWeight: 700,
         },
+        h3: {
+            fontSize: "2rem", // Adjusted font size
+            fontWeight: 700,
+        },
         h5: {
             fontSize: "1.5rem", // Adjusted font size
             fontWeight: 600,
