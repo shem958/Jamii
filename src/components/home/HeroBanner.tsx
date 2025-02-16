@@ -13,7 +13,7 @@ const HeroBanner: React.FC = () => {
       }}
     >
       <Image
-        src="/assets/images/hero-banner.jpg"
+        src="/assets/hero.jpg"
         alt="Jamii Cereals and Gen Shop"
         layout="fill"
         objectFit="cover"

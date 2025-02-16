@@ -124,11 +124,11 @@ const HeroSection: React.FC = () => {
                   },
                 }}
               >
-                <Avatar alt="User 1" src="/path-to-avatar-1.jpg" />
-                <Avatar alt="User 2" src="/path-to-avatar-2.jpg" />
-                <Avatar alt="User 3" src="/path-to-avatar-3.jpg" />
-                <Avatar alt="User 4" src="/path-to-avatar-4.jpg" />
-                <Avatar alt="User 5" src="/path-to-avatar-5.jpg" />
+                <Avatar alt="User 1" src="/assets/a1.png" />
+                <Avatar alt="User 2" src="/assets/a2.png" />
+                <Avatar alt="User 3" src="/assets/a3.png" />
+                <Avatar alt="User 4" src="/assets/a4.png" />
+                <Avatar alt="User 5" src="/assets/a5.png" />
               </AvatarGroup>
               <Box>
                 <Typography
@@ -176,7 +176,7 @@ const HeroSection: React.FC = () => {
                 }}
               >
                 <Image
-                  src="/assets/images/jamii-biz-logo.png"
+                  src="/assets/jamii.png"
                   alt="Jamii Biz Logo"
                   width={400}
                   height={200}
