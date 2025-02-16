@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
           variant="h6"
           sx={{ fontWeight: 700, color: "primary.main", cursor: "pointer" }}
         >
-          Jamii Cereals and Gen shop
+          Jamii Cereals and Gen Shop
         </Typography>
 
         <Stack
