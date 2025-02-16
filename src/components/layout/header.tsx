@@ -40,8 +40,8 @@ const Header: React.FC = () => {
         justifyContent: "space-between",
         px: { xs: 2, md: 4 },
         py: 2,
-        backgroundColor: "common.white",
-        color: "primary.main",
+        backgroundColor: "#ffffff", // Updated color
+        color: "#3e3e3e", // Updated color
         borderBottom: "1px solid #f0f0f0",
       }}
     >
@@ -49,8 +49,8 @@ const Header: React.FC = () => {
         variant="h6"
         sx={{
           fontWeight: 700,
-          fontSize: "1.25rem",
-          color: "primary.main",
+          fontSize: "1.5rem", // Adjusted font size
+          color: "#3e3e3e", // Updated color
           "&:hover": {
             cursor: "pointer",
           },
@@ -69,9 +69,9 @@ const Header: React.FC = () => {
           endIcon={<KeyboardArrowDownIcon />}
           onClick={handleMenuOpen(setProductsAnchorEl)}
           sx={{
-            color: "primary.main",
+            color: "#3e3e3e", // Updated color
             textTransform: "none",
-            fontWeight: 600,
+            fontWeight: 600, // Adjusted font weight
             "&:hover": {
               backgroundColor: "transparent",
             },
@@ -96,9 +96,9 @@ const Header: React.FC = () => {
           endIcon={<KeyboardArrowDownIcon />}
           onClick={handleMenuOpen(setCompanyAnchorEl)}
           sx={{
-            color: "primary.main",
+            color: "#3e3e3e", // Updated color
             textTransform: "none",
-            fontWeight: 600,
+            fontWeight: 600, // Adjusted font weight
             "&:hover": {
               backgroundColor: "transparent",
             },
@@ -124,9 +124,9 @@ const Header: React.FC = () => {
 
         <Button
           sx={{
-            color: "primary.main",
+            color: "#3e3e3e", // Updated color
             textTransform: "none",
-            fontWeight: 600,
+            fontWeight: 600, // Adjusted font weight
             "&:hover": {
               backgroundColor: "transparent",
             },
@@ -143,9 +143,9 @@ const Header: React.FC = () => {
             borderRadius: "4px",
             px: 3,
             py: 1,
-            color: "common.white",
+            color: "#ffffff", // Updated color
             "&:hover": {
-              backgroundColor: "secondary.dark",
+              backgroundColor: "#55a630", // Updated color
             },
           }}
         >
