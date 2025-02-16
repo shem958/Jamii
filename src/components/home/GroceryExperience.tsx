@@ -6,7 +6,7 @@ const GroceryExperience: React.FC = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "#f9f9f9",
+        backgroundColor: "#ffffff",
         py: { xs: 6, md: 12 },
         px: { xs: 3, md: 4 },
       }}
@@ -138,6 +138,31 @@ const GroceryExperience: React.FC = () => {
             </Paper>
           </Grid>
         </Grid>
+        <Box sx={{ mt: { xs: 6, md: 12 }, textAlign: "center" }}>
+          <Typography
+            variant="h6"
+            sx={{
+              fontSize: "1.25rem",
+              fontWeight: 600,
+              color: "#3e3e3e",
+              mb: 2,
+            }}
+          >
+            Convenient Online Shopping
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontSize: "1rem",
+              color: "#3e3e3e",
+              maxWidth: "60ch",
+              mx: "auto",
+            }}
+          >
+            Enjoy convenient online shopping with a delivery service across
+            Nairobi or visit our store in Dagoretti Market.
+          </Typography>
+        </Box>
       </Container>
     </Box>
   );
