@@ -35,14 +35,19 @@ const Navbar: React.FC = () => {
     };
 
   return (
-    <AppBar position="static" color="transparent" elevation={0}>
+    <AppBar
+      position="static"
+      color="transparent"
+      elevation={0}
+      sx={{ backgroundColor: "#ffffff" }}
+    >
       <Container maxWidth="xl">
         <Toolbar sx={{ justifyContent: "space-between", py: 2, px: 0 }}>
           <Typography
             variant="h6"
             sx={{
               fontWeight: 700,
-              color: "primary.main",
+              color: "#000000", // Black
               cursor: "pointer",
               fontSize: "1.25rem",
             }}
@@ -57,10 +62,11 @@ const Navbar: React.FC = () => {
               endIcon={<KeyboardArrowDownIcon />}
               onClick={handleMenuOpen(setProductsAnchorEl)}
               sx={{
-                color: "primary.main",
+                color: "#000000", // Black
                 textTransform: "none",
                 fontWeight: 500,
                 mr: 3,
+                fontSize: "1rem", // Medium font size
                 "&:hover": { backgroundColor: "transparent" },
               }}
             >
@@ -83,10 +89,11 @@ const Navbar: React.FC = () => {
               endIcon={<KeyboardArrowDownIcon />}
               onClick={handleMenuOpen(setCompanyAnchorEl)}
               sx={{
-                color: "primary.main",
+                color: "#000000", // Black
                 textTransform: "none",
                 fontWeight: 500,
                 mr: 3,
+                fontSize: "1rem", // Medium font size
                 "&:hover": { backgroundColor: "transparent" },
               }}
             >
@@ -110,10 +117,11 @@ const Navbar: React.FC = () => {
 
             <Button
               sx={{
-                color: "primary.main",
+                color: "#000000", // Black
                 textTransform: "none",
                 fontWeight: 500,
                 mr: 3,
+                fontSize: "1rem", // Medium font size
                 "&:hover": { backgroundColor: "transparent" },
               }}
             >
@@ -129,8 +137,8 @@ const Navbar: React.FC = () => {
                 px: 3,
                 py: 1,
                 fontWeight: 500,
-                color: "common.white",
-                backgroundColor: "#55a630",
+                color: "#ffffff", // White
+                backgroundColor: "#55a630", // Green
                 "&:hover": { backgroundColor: "#458a26" },
               }}
             >
@@ -139,7 +147,7 @@ const Navbar: React.FC = () => {
           </Box>
 
           <IconButton
-            sx={{ display: { xs: "flex", md: "none" }, color: "primary.main" }}
+            sx={{ display: { xs: "flex", md: "none" }, color: "#000000" }} // Black
             aria-label="menu"
           >
             <MenuIcon />
