@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import {
   Box,
@@ -166,7 +165,6 @@ const HeroSection: React.FC = () => {
                 priority
               />
 
-              {/* Overlay the Jamii Biz logo */}
               <Box
                 sx={{
                   position: "absolute",
