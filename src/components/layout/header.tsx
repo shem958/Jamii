@@ -13,15 +13,24 @@ import Image from "next/image";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 const Header: React.FC = () => {
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [productsAnchorEl, setProductsAnchorEl] = useState<null | HTMLElement>(
+    null
+  );
+  const [companyAnchorEl, setCompanyAnchorEl] = useState<null | HTMLElement>(
+    null
+  );
 
-  const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
+  const handleMenuOpen =
+    (setAnchor: React.Dispatch<React.SetStateAction<null | HTMLElement>>) =>
+    (event: React.MouseEvent<HTMLElement>) => {
+      setAnchor(event.currentTarget);
+    };
 
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-  };
+  const handleMenuClose =
+    (setAnchor: React.Dispatch<React.SetStateAction<null | HTMLElement>>) =>
+    () => {
+      setAnchor(null);
+    };
 
   return (
     <Box
@@ -55,12 +64,11 @@ const Header: React.FC = () => {
         direction="row"
         spacing={4}
         alignItems="center"
-        sx={{
-          display: { xs: "none", md: "flex" },
-        }}
+        sx={{ display: { xs: "none", md: "flex" } }}
       >
         <Button
           endIcon={<KeyboardArrowDownIcon />}
+          onClick={handleMenuOpen(setProductsAnchorEl)}
           sx={{
             color: "primary.main",
             textTransform: "none",
@@ -72,9 +80,22 @@ const Header: React.FC = () => {
         >
           Products
         </Button>
+        <Menu
+          anchorEl={productsAnchorEl}
+          open={Boolean(productsAnchorEl)}
+          onClose={handleMenuClose(setProductsAnchorEl)}
+        >
+          <MenuItem onClick={handleMenuClose(setProductsAnchorEl)}>
+            Product Showcase
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose(setProductsAnchorEl)}>
+            Shop Online
+          </MenuItem>
+        </Menu>
 
         <Button
           endIcon={<KeyboardArrowDownIcon />}
+          onClick={handleMenuOpen(setCompanyAnchorEl)}
           sx={{
             color: "primary.main",
             textTransform: "none",
@@ -86,6 +107,21 @@ const Header: React.FC = () => {
         >
           Company
         </Button>
+        <Menu
+          anchorEl={companyAnchorEl}
+          open={Boolean(companyAnchorEl)}
+          onClose={handleMenuClose(setCompanyAnchorEl)}
+        >
+          <MenuItem onClick={handleMenuClose(setCompanyAnchorEl)}>
+            About Us
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose(setCompanyAnchorEl)}>
+            Visit Us
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose(setCompanyAnchorEl)}>
+            Customer Testimonials
+          </MenuItem>
+        </Menu>
 
         <Button
           sx={{
@@ -118,39 +154,10 @@ const Header: React.FC = () => {
         </Button>
       </Stack>
 
-      {/* Mobile Menu Icon */}
-      <IconButton
-        onClick={handleMenuOpen}
-        sx={{
-          display: { xs: "flex", md: "none" },
-          padding: 0,
-        }}
-      >
-        <Image
-          src="/assets/log06.png"
-          alt="Menu"
-          width={30}
-          height={30}
-          priority
-        />
-      </IconButton>
-
       {/* Mobile Menu */}
-      <Menu
-        anchorEl={anchorEl}
-        open={Boolean(anchorEl)}
-        onClose={handleMenuClose}
-        sx={{
-          display: { xs: "block", md: "none" },
-        }}
-      >
-        <MenuItem onClick={handleMenuClose}>Products</MenuItem>
-        <MenuItem onClick={handleMenuClose}>Company</MenuItem>
-        <MenuItem onClick={handleMenuClose}>
-          Frequently Asked Questions
-        </MenuItem>
-        <MenuItem onClick={handleMenuClose}>Get in Touch</MenuItem>
-      </Menu>
+      <IconButton sx={{ display: { xs: "flex", md: "none" } }}>
+        <Image src="/assets/menu-icon.png" alt="Menu" width={30} height={30} />
+      </IconButton>
     </Box>
   );
 };
