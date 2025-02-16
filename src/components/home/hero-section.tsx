@@ -1,192 +1,115 @@
-import React from "react";
 import {
   Box,
   Button,
   Typography,
-  Avatar,
-  Grid,
-  Container,
+  Chip,
   AvatarGroup,
+  Avatar,
+  Paper,
 } from "@mui/material";
 import Image from "next/image";
 
-const HeroSection: React.FC = () => {
+const HeroSection = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "#f9f9f9",
-        pt: { xs: 6, md: 8 },
-        pb: { xs: 6, md: 12 },
-        overflow: "hidden",
         position: "relative",
+        overflow: "hidden",
+        p: 4,
+        maxWidth: "1200px",
+        mx: "auto",
       }}
     >
-      <Container maxWidth="xl" sx={{ position: "relative", zIndex: 1 }}>
-        <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={6}>
-            <Box
-              sx={{
-                backgroundColor: "#f8f3ec",
-                borderRadius: "24px",
-                p: 3,
-                mb: 4,
-                width: "fit-content",
-              }}
-            >
-              <Typography
-                component="span"
-                sx={{
-                  fontSize: "1rem",
-                  fontWeight: 600,
-                  color: "#3e3e3e",
-                }}
-              >
-                Fresh Selections
-              </Typography>
-            </Box>
+      {/* Top Badge */}
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          backgroundColor: "#f4ede4",
+          borderRadius: "30px",
+          px: 2,
+          py: 1,
+          width: "fit-content",
+          mb: 2,
+        }}
+      >
+        <Chip
+          label="Fresh Selections"
+          sx={{
+            backgroundColor: "#3e3e3e",
+            color: "#ffffff",
+            fontWeight: "bold",
+            mr: 1,
+          }}
+        />
+        <Typography variant="body2" color="text.primary">
+          Experience the richness of wholesome nutrition at Jamii Cereals and
+          Gen Store 🌾
+        </Typography>
+      </Box>
 
-            <Typography
-              variant="h1"
-              sx={{
-                fontSize: { xs: "2.5rem", md: "3.5rem" },
-                fontWeight: 700,
-                color: "#3e3e3e",
-                mb: 3,
-                lineHeight: 1.2,
-              }}
-            >
-              Elevate Your Meals
-            </Typography>
+      {/* Main Heading */}
+      <Typography variant="h3" fontWeight={700} gutterBottom>
+        Elevate Your Meals
+      </Typography>
 
-            <Typography
-              variant="body1"
-              sx={{
-                fontSize: "1.125rem",
-                color: "#3e3e3e",
-                mb: 3,
-                maxWidth: "550px",
-                lineHeight: 1.5,
-              }}
-            >
-              Experience the richness of wholesome nutrition at Jamii Cereals
-              and Gen Store 🌱
-            </Typography>
+      {/* Subtext */}
+      <Typography variant="body1" color="text.secondary" mb={3}>
+        Shop premium dry cereals and groceries delivered right to your door or
+        visit us at Dagoretti Market.
+      </Typography>
 
-            <Typography
-              variant="body1"
-              sx={{
-                fontSize: "1.125rem",
-                color: "#3e3e3e",
-                mb: 4,
-                maxWidth: "550px",
-                lineHeight: 1.5,
-              }}
-            >
-              Shop premium dry cereals and groceries delivered right to your
-              door or visit us at Dagoretti Market.
-            </Typography>
+      {/* Call to Action */}
+      <Button
+        variant="contained"
+        sx={{ backgroundColor: "#4d602c", borderRadius: "8px", px: 3 }}
+      >
+        Shop Online
+      </Button>
 
-            <Button
-              variant="contained"
-              color="secondary"
-              sx={{
-                fontSize: "1rem",
-                textTransform: "none",
-                px: 4,
-                py: 1.5,
-                borderRadius: "4px",
-                mb: 6,
-                backgroundColor: "#55a630",
-                "&:hover": { backgroundColor: "#458a26" },
-              }}
-            >
-              Shop Online
-            </Button>
+      {/* Customer Favorites */}
+      <Paper
+        elevation={3}
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          borderRadius: "16px",
+          px: 2,
+          py: 1,
+          mt: 3,
+          width: "fit-content",
+          background: "#f5f5f5",
+        }}
+      >
+        <AvatarGroup max={4} sx={{ mr: 1 }}>
+          <Avatar src="/customer1.jpg" />
+          <Avatar src="/customer2.jpg" />
+          <Avatar src="/customer3.jpg" />
+          <Avatar src="/customer4.jpg" />
+        </AvatarGroup>
+        <Typography variant="body2" fontWeight={600}>
+          4.800 Customer Favorites
+        </Typography>
+      </Paper>
 
-            <Box
-              sx={{
-                bgcolor: "#e2e2e2",
-                borderRadius: "16px",
-                p: 2,
-                width: "fit-content",
-                display: "flex",
-                alignItems: "center",
-                gap: 2,
-              }}
-            >
-              <AvatarGroup
-                max={5}
-                sx={{
-                  "& .MuiAvatar-root": {
-                    width: 32,
-                    height: 32,
-                    border: "none",
-                  },
-                }}
-              >
-                <Avatar alt="User 1" src="/assets/a1.png" />
-                <Avatar alt="User 2" src="/assets/a2.png" />
-                <Avatar alt="User 3" src="/assets/a3.png" />
-                <Avatar alt="User 4" src="/assets/a4.png" />
-                <Avatar alt="User 5" src="/assets/a5.png" />
-              </AvatarGroup>
-              <Box>
-                <Typography
-                  variant="h6"
-                  sx={{ fontSize: "1.5rem", fontWeight: 700, lineHeight: 1 }}
-                >
-                  4.800
-                </Typography>
-                <Typography
-                  variant="body2"
-                  sx={{ fontSize: "0.875rem", color: "#3e3e3e" }}
-                >
-                  Customer Favorites
-                </Typography>
-              </Box>
-            </Box>
-          </Grid>
-
-          <Grid item xs={12} md={6} sx={{ position: "relative" }}>
-            <Box
-              sx={{
-                position: "relative",
-                width: "100%",
-                height: { xs: "300px", md: "500px" },
-                borderRadius: "24px",
-                overflow: "hidden",
-              }}
-            >
-              <Image
-                src="/assets/images/hero-cereals.jpg"
-                alt="Jamii Cereals and Gen shop"
-                layout="fill"
-                objectFit="cover"
-                priority
-              />
-
-              <Box
-                sx={{
-                  position: "absolute",
-                  top: "50%",
-                  left: "50%",
-                  transform: "translate(-50%, -50%)",
-                  width: "60%",
-                  height: "auto",
-                }}
-              >
-                <Image
-                  src="/assets/jamii.png"
-                  alt="Jamii Biz Logo"
-                  width={400}
-                  height={200}
-                  layout="responsive"
-                />
-              </Box>
-            </Box>
-          </Grid>
-        </Grid>
-      </Container>
+      {/* Side Image */}
+      <Box
+        sx={{
+          position: "absolute",
+          top: 0,
+          right: 0,
+          width: "50%",
+          maxWidth: "400px",
+        }}
+      >
+        <Image
+          src="/cereals.png"
+          alt="Cereals Image"
+          width={400}
+          height={400}
+          style={{ borderRadius: "50%" }}
+        />
+      </Box>
     </Box>
   );
 };
