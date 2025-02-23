@@ -1,4 +1,6 @@
+"use client";
 // components/ProductsSection.tsx
+
 import React from "react";
 import { Box, Typography, Container, Grid, Paper } from "@mui/material";
 import { styled } from "@mui/system";

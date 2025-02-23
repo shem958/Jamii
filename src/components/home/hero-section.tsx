@@ -1,3 +1,4 @@
+"use client";
 // components/HeroSection.tsx
 import React from "react";
 import {

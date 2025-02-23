@@ -1,3 +1,4 @@
+"use client";
 // components/GroceryExperience.tsx
 import React from "react";
 import { Typography, Container, Grid, Paper, Avatar } from "@mui/material";

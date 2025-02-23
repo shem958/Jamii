@@ -1,4 +1,6 @@
+"use client";
 // components/ProductsShowcase.tsx
+
 import React from "react";
 import { Typography, Container, Grid, Card, CardContent } from "@mui/material";
 import { styled } from "@mui/system";

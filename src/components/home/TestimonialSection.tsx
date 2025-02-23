@@ -1,3 +1,4 @@
+"use client";
 // components/TestimonialSection.tsx
 import React from "react";
 import { Typography, Container, Divider } from "@mui/material";

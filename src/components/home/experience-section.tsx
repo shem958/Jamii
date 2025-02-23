@@ -1,3 +1,5 @@
+"use client";
+
 // components/ExperienceSection.tsx
 import React from "react";
 import {
