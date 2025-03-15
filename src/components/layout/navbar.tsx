@@ -27,41 +27,21 @@ const Navbar: React.FC = () => {
           </Typography>
         </Box>
         <Box sx={{ display: "flex", alignItems: "center" }}>
-          <Button
-            endIcon={<KeyboardArrowDownIcon />}
-            sx={{
-              color: "#333",
-              textTransform: "none",
-              fontSize: "16px",
-              fontWeight: "normal",
-              mr: 1,
-            }}
-          >
-            Products
-          </Button>
-          <Button
-            endIcon={<KeyboardArrowDownIcon />}
-            sx={{
-              color: "#333",
-              textTransform: "none",
-              fontSize: "16px",
-              fontWeight: "normal",
-              mr: 1,
-            }}
-          >
-            Company
-          </Button>
-          <Button
-            sx={{
-              color: "#333",
-              textTransform: "none",
-              fontSize: "16px",
-              fontWeight: "normal",
-              mr: 2,
-            }}
-          >
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Typography sx={{ color: "#333", fontSize: "16px", mr: 0.5 }}>
+              Products
+            </Typography>
+            <KeyboardArrowDownIcon sx={{ color: "#333", fontSize: "18px" }} />
+          </Box>
+          <Box sx={{ display: "flex", alignItems: "center", mx: 3 }}>
+            <Typography sx={{ color: "#333", fontSize: "16px", mr: 0.5 }}>
+              Company
+            </Typography>
+            <KeyboardArrowDownIcon sx={{ color: "#333", fontSize: "18px" }} />
+          </Box>
+          <Typography sx={{ color: "#333", fontSize: "16px", mr: 3 }}>
             Frequently Asked Questions
-          </Button>
+          </Typography>
           <Button
             variant="contained"
             sx={{
