@@ -1,12 +1,10 @@
-"use client";
-import React from "react";
 import {
-  Box,
-  Typography,
-  Button,
   Container,
   Avatar,
   Grid,
+  Typography,
+  Box,
+  Button,
 } from "@mui/material";
 import { styled } from "@mui/system";
 
@@ -18,34 +16,45 @@ const BackgroundImageBox = styled(Box)({
   backgroundSize: "cover",
   backgroundPosition: "center",
   overflow: "hidden",
+  display: "flex",
+  alignItems: "center",
 });
 
 const HeroContent = styled(Container)({
-  position: "relative",
   zIndex: 1,
   textAlign: "left",
   color: "#5A4636",
+  maxWidth: "600px",
 });
 
 const LogoImage = styled("img")({
   position: "absolute",
-  top: "20%",
-  right: "10%",
-  width: "300px",
+  top: "10%",
+  right: "5%",
+  width: "250px",
 });
 
 const HeroSection: React.FC = () => {
   return (
     <BackgroundImageBox>
-      <HeroContent maxWidth="md">
-        <Typography variant="h4" gutterBottom>
+      <HeroContent>
+        <Box
+          sx={{
+            display: "inline-block",
+            backgroundColor: "#EDE0D4",
+            padding: "6px 12px",
+            borderRadius: "20px",
+            fontSize: "14px",
+            fontWeight: "bold",
+          }}
+        >
           Fresh Selections
-        </Typography>
-        <Typography variant="h5" gutterBottom>
+        </Box>
+        <Typography variant="h5" mt={2}>
           Experience the richness of wholesome nutrition at Jamii Cereals and
           Gen Store 🌿
         </Typography>
-        <Typography variant="h2" gutterBottom>
+        <Typography variant="h2" fontWeight="bold" gutterBottom>
           Elevate Your Meals
         </Typography>
         <Typography variant="h6" paragraph>
@@ -54,11 +63,16 @@ const HeroSection: React.FC = () => {
         </Typography>
         <Button
           variant="contained"
-          style={{ backgroundColor: "#556B2F", color: "white" }}
+          sx={{
+            backgroundColor: "#556B2F",
+            color: "white",
+            mt: 2,
+            "&:hover": { backgroundColor: "#6B8E23" },
+          }}
         >
           Shop Online
         </Button>
-        <Grid container spacing={2} justifyContent="flex-start" marginTop={4}>
+        <Grid container spacing={1} mt={4}>
           {["/avatar1.png", "/avatar2.png", "/avatar3.png"].map(
             (src, index) => (
               <Grid item key={index}>
@@ -70,16 +84,12 @@ const HeroSection: React.FC = () => {
         <Box
           display="flex"
           alignItems="center"
-          marginTop={4}
-          padding={2}
+          mt={4}
+          p={2}
           bgcolor="rgba(90, 70, 54, 0.1)"
           borderRadius="12px"
         >
-          <Avatar
-            alt="Profile"
-            src="/path-to-profile-image"
-            style={{ marginRight: "10px" }}
-          />
+          <Avatar alt="Profile" src="/path-to-profile-image" sx={{ mr: 1 }} />
           <Typography variant="h6">4,800 Customer Favorites</Typography>
         </Box>
       </HeroContent>
