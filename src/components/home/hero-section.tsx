@@ -13,6 +13,9 @@ const MainContainer = styled(Box)({
   padding: "80px 0",
   overflow: "hidden",
   alignItems: "center",
+  backgroundImage: "url('/assets/cereal-background.png')", // Add textured background
+  backgroundSize: "cover",
+  backgroundPosition: "center",
 });
 
 const ContentContainer = styled(Box)({
@@ -35,6 +38,7 @@ const RightContent = styled(Box)({
   justifyContent: "center",
   alignItems: "center",
   position: "relative",
+  marginTop: "-50px", // Shift logo upward
 });
 
 const FreshSelectionsBadge = styled(Box)({
@@ -49,8 +53,8 @@ const FreshSelectionsBadge = styled(Box)({
 });
 
 const JamiiLogoContainer = styled(Box)({
-  width: "320px",
-  height: "320px",
+  width: "400px", // Increase logo size
+  height: "400px",
   borderRadius: "50%",
   display: "flex",
   justifyContent: "center",
@@ -59,6 +63,8 @@ const JamiiLogoContainer = styled(Box)({
   position: "relative",
   backgroundColor: "white",
   boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.15)",
+  backgroundImage: "url('/assets/cereal-texture.png')", // Add textured background around logo
+  backgroundSize: "cover",
 });
 
 const JamiiLogo = styled("img")({
@@ -75,7 +81,7 @@ const AvatarGroup = styled(Box)({
 });
 
 const StatsBox = styled(Box)({
-  backgroundColor: "rgba(255, 255, 255, 0.6)",
+  backgroundColor: "rgba(255, 255, 255, 0.8)", // Semi-transparent glassmorphic effect
   padding: "18px 26px",
   borderRadius: "15px",
   marginLeft: "16px",
@@ -141,6 +147,7 @@ const HeroSection: React.FC = () => {
               fontSize: "18px",
               padding: "12px 28px",
               borderRadius: "8px",
+              boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)", // Add subtle shadow
               "&:hover": { backgroundColor: "#6B8E23" },
             }}
           >
