@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   Box,
@@ -82,7 +83,7 @@ const HeroSection: React.FC = () => {
           <Typography variant="h6">4,800 Customer Favorites</Typography>
         </Box>
       </HeroContent>
-      <LogoImage src="/path-to-jamii-biz-logo" alt="Jamii Biz Logo" />
+      <LogoImage src="/assets/jamii.png" alt="Jamii Biz Logo" />
     </BackgroundImageBox>
   );
 };
