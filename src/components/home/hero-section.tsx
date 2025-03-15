@@ -10,156 +10,98 @@ const MainContainer = styled(Box)({
   minHeight: "calc(100vh - 64px)",
   position: "relative",
   backgroundColor: "#FFFFFF",
+  padding: "80px 0",
   overflow: "hidden",
 });
 
 const ContentContainer = styled(Box)({
-  display: "flex",
-  flexDirection: "row",
+  maxWidth: "1280px",
   width: "100%",
-  flex: 1,
+  margin: "0 auto",
+  display: "flex",
   position: "relative",
 });
 
-const LeftSection = styled(Box)({
+const LeftContent = styled(Box)({
   width: "60%",
-  padding: "80px 0 0 80px",
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "flex-start",
-  position: "relative",
-  zIndex: 1,
+  paddingLeft: "40px",
 });
 
-const RightSection = styled(Box)({
+const RightContent = styled(Box)({
   width: "40%",
-  position: "relative",
-  overflow: "hidden",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
 });
 
-const CerealBackground = styled("div")({
-  position: "absolute",
-  top: 0,
-  right: 0,
-  width: "100%",
-  height: "100%",
-  backgroundImage: "url(/cereals-bg.jpg)",
-  backgroundSize: "cover",
-  backgroundPosition: "center",
+const FreshSelectionsBadge = styled(Box)({
+  display: "inline-block",
+  backgroundColor: "#F8EFE0",
+  padding: "8px 20px",
+  borderRadius: "20px",
+  fontSize: "16px",
+  marginBottom: "16px",
 });
 
 const JamiiLogo = styled("img")({
-  position: "absolute",
-  top: "30%",
-  left: "50%",
-  transform: "translateX(-50%)",
   width: "250px",
-  zIndex: 2,
+  borderRadius: "50%",
+  overflow: "hidden",
 });
 
-const AvatarCircle = styled(Avatar)({
-  width: 80,
-  height: 80,
-  border: "3px solid white",
-  boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
-});
-
-const CustomerAvatars = styled(Box)({
+const AvatarGroup = styled(Box)({
   display: "flex",
-  marginTop: "40px",
+  marginTop: "60px",
 });
 
 const StatsBox = styled(Box)({
-  display: "flex",
-  alignItems: "center",
   backgroundColor: "#F0F0F0",
-  borderRadius: "12px",
   padding: "16px 24px",
-  marginLeft: "20px",
+  borderRadius: "12px",
+  marginLeft: "16px",
+});
+
+const CentralAvatar = styled(Avatar)({
+  width: "70px",
+  height: "70px",
+  border: "3px solid white",
+  boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+  backgroundColor: "#ccc",
+  position: "absolute",
+  bottom: "100px",
+  left: "50%",
+  transform: "translateX(-50%)",
 });
 
 const HeroSection: React.FC = () => {
-  // This will represent the dotted curved line from avatars to the central profile
-  const DottedLine = () => (
-    <svg
-      width="400"
-      height="200"
-      viewBox="0 0 400 200"
-      fill="none"
-      style={{
-        position: "absolute",
-        bottom: "100px",
-        left: "50%",
-        transform: "translateX(-50%)",
-        zIndex: 0,
-      }}
-    >
-      <path
-        d="M30,100 Q200,180 370,100"
-        stroke="#CCCCCC"
-        strokeWidth="2"
-        strokeDasharray="5,5"
-        fill="none"
-      />
-    </svg>
-  );
-
   return (
     <MainContainer>
       <ContentContainer>
-        <LeftSection>
-          {/* Fresh Selections Tag */}
-          <Box
-            sx={{
-              display: "inline-block",
-              backgroundColor: "#F8EFE0",
-              padding: "8px 20px",
-              borderRadius: "25px",
-              fontSize: "16px",
-              fontWeight: "500",
-              mb: 2,
-              maxWidth: "fit-content",
-            }}
-          >
-            Fresh Selections
-          </Box>
+        <LeftContent>
+          <FreshSelectionsBadge>Fresh Selections</FreshSelectionsBadge>
 
-          {/* Main Content */}
           <Typography
-            variant="body1"
-            sx={{
-              fontSize: "18px",
-              color: "#333",
-              mb: 2,
-              maxWidth: "500px",
-            }}
+            sx={{ fontSize: "18px", color: "#333", mb: 2, maxWidth: "95%" }}
           >
             Experience the richness of wholesome nutrition at Jamii Cereals and
             Gen Store 🌿
           </Typography>
 
           <Typography
-            variant="h1"
             sx={{
               fontSize: "64px",
               fontWeight: "bold",
               lineHeight: 1.1,
               color: "#333",
               mb: 3,
-              maxWidth: "500px",
+              maxWidth: "400px",
             }}
           >
             Elevate Your Meals
           </Typography>
 
           <Typography
-            variant="body1"
-            sx={{
-              fontSize: "18px",
-              color: "#333",
-              mb: 3,
-              maxWidth: "500px",
-            }}
+            sx={{ fontSize: "18px", color: "#333", mb: 3, maxWidth: "95%" }}
           >
             Shop premium dry cereals and groceries delivered right to your door
             or visit us at Dagoretti Market.
@@ -170,20 +112,17 @@ const HeroSection: React.FC = () => {
             sx={{
               backgroundColor: "#556B2F",
               color: "white",
-              padding: "10px 24px",
-              fontSize: "16px",
               textTransform: "none",
-              fontWeight: "normal",
+              fontSize: "16px",
+              padding: "8px 20px",
               borderRadius: "4px",
-              width: "fit-content",
               "&:hover": { backgroundColor: "#6B8E23" },
             }}
           >
             Shop Online
           </Button>
 
-          {/* Customer Avatars and Stats */}
-          <CustomerAvatars>
+          <AvatarGroup>
             <Box sx={{ display: "flex" }}>
               {[0, 1, 2, 3, 4].map((index) => (
                 <Avatar
@@ -191,10 +130,10 @@ const HeroSection: React.FC = () => {
                   sx={{
                     width: 36,
                     height: 36,
+                    backgroundColor: "#ccc",
                     border: "2px solid white",
-                    marginLeft: index === 0 ? 0 : -1,
-                    bgcolor: "#ccc", // Placeholder color
-                    fontSize: "14px",
+                    ml: index === 0 ? 0 : -1,
+                    zIndex: 5 - index,
                   }}
                 >
                   C
@@ -203,44 +142,65 @@ const HeroSection: React.FC = () => {
             </Box>
 
             <StatsBox>
-              <Box>
-                <Typography
-                  variant="h6"
-                  sx={{ fontWeight: "bold", color: "#333" }}
-                >
-                  4,800
-                </Typography>
-                <Typography variant="body2" sx={{ color: "#666" }}>
-                  Customer Favorites
-                </Typography>
-              </Box>
+              <Typography
+                sx={{ fontWeight: "bold", fontSize: "18px", color: "#333" }}
+              >
+                4,800
+              </Typography>
+              <Typography sx={{ fontSize: "14px", color: "#666" }}>
+                Customer Favorites
+              </Typography>
             </StatsBox>
-          </CustomerAvatars>
-        </LeftSection>
+          </AvatarGroup>
+        </LeftContent>
 
-        <RightSection>
-          <CerealBackground />
-          <JamiiLogo src="/assets/jamii.png" alt="Jamii Biz Logo" />
-        </RightSection>
+        <RightContent>
+          <Box
+            sx={{
+              width: "300px",
+              height: "300px",
+              borderRadius: "50%",
+              overflow: "hidden",
+              position: "relative",
+            }}
+          >
+            <RightContent>
+              <JamiiLogo
+                src="/assets/jamii.png"
+                alt="Jamii Biz Logo"
+                width={250}
+                height={250}
+              />
+            </RightContent>
+          </Box>
+        </RightContent>
       </ContentContainer>
 
-      {/* Center profile avatar */}
+      {/* Dotted curved line */}
       <Box
         sx={{
           position: "absolute",
-          bottom: "60px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          zIndex: 2,
+          bottom: "200px",
+          left: 0,
+          width: "100%",
+          height: "100px",
           display: "flex",
           justifyContent: "center",
         }}
       >
-        <AvatarCircle sx={{ bgcolor: "#ccc" }}>C</AvatarCircle>
+        <svg width="600" height="100" viewBox="0 0 600 100">
+          <path
+            d="M100,20 Q300,150 500,20"
+            stroke="#D0D0D0"
+            strokeWidth="2"
+            strokeDasharray="5,5"
+            fill="none"
+          />
+        </svg>
       </Box>
 
-      {/* Dotted curved line connecting avatars */}
-      <DottedLine />
+      {/* Center avatar */}
+      <CentralAvatar>C</CentralAvatar>
     </MainContainer>
   );
 };
