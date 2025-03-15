@@ -19,6 +19,7 @@ const ContentContainer = styled(Box)({
   width: "100%",
   margin: "0 auto",
   display: "flex",
+  alignItems: "center",
   position: "relative",
 });
 
@@ -32,6 +33,7 @@ const RightContent = styled(Box)({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+  position: "relative",
 });
 
 const FreshSelectionsBadge = styled(Box)({
@@ -41,17 +43,33 @@ const FreshSelectionsBadge = styled(Box)({
   borderRadius: "20px",
   fontSize: "16px",
   marginBottom: "16px",
+  fontWeight: "bold",
+});
+
+const JamiiLogoContainer = styled(Box)({
+  width: "300px",
+  height: "300px",
+  borderRadius: "50%",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  overflow: "hidden",
+  position: "relative",
+  backgroundColor: "white",
+  boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
 });
 
 const JamiiLogo = styled("img")({
-  width: "250px",
-  borderRadius: "50%",
-  overflow: "hidden",
+  width: "100%",
+  height: "100%",
+  objectFit: "cover",
 });
 
 const AvatarGroup = styled(Box)({
   display: "flex",
-  marginTop: "60px",
+  alignItems: "center",
+  marginTop: "40px",
+  position: "relative",
 });
 
 const StatsBox = styled(Box)({
@@ -59,6 +77,7 @@ const StatsBox = styled(Box)({
   padding: "16px 24px",
   borderRadius: "12px",
   marginLeft: "16px",
+  boxShadow: "0px 4px 8px rgba(0,0,0,0.1)",
 });
 
 const CentralAvatar = styled(Avatar)({
@@ -68,7 +87,7 @@ const CentralAvatar = styled(Avatar)({
   boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
   backgroundColor: "#ccc",
   position: "absolute",
-  bottom: "100px",
+  bottom: "-40px",
   left: "50%",
   transform: "translateX(-50%)",
 });
@@ -89,12 +108,12 @@ const HeroSection: React.FC = () => {
 
           <Typography
             sx={{
-              fontSize: "64px",
+              fontSize: "72px",
               fontWeight: "bold",
               lineHeight: 1.1,
               color: "#333",
               mb: 3,
-              maxWidth: "400px",
+              maxWidth: "500px",
             }}
           >
             Elevate Your Meals
@@ -114,8 +133,8 @@ const HeroSection: React.FC = () => {
               color: "white",
               textTransform: "none",
               fontSize: "16px",
-              padding: "8px 20px",
-              borderRadius: "4px",
+              padding: "10px 24px",
+              borderRadius: "6px",
               "&:hover": { backgroundColor: "#6B8E23" },
             }}
           >
@@ -123,16 +142,17 @@ const HeroSection: React.FC = () => {
           </Button>
 
           <AvatarGroup>
-            <Box sx={{ display: "flex" }}>
+            <Box sx={{ display: "flex", position: "relative" }}>
               {[0, 1, 2, 3, 4].map((index) => (
                 <Avatar
                   key={index}
                   sx={{
-                    width: 36,
-                    height: 36,
+                    width: 40,
+                    height: 40,
                     backgroundColor: "#ccc",
                     border: "2px solid white",
-                    ml: index === 0 ? 0 : -1,
+                    position: "absolute",
+                    left: `${index * 24}px`,
                     zIndex: 5 - index,
                   }}
                 >
@@ -155,35 +175,19 @@ const HeroSection: React.FC = () => {
         </LeftContent>
 
         <RightContent>
-          <Box
-            sx={{
-              width: "300px",
-              height: "300px",
-              borderRadius: "50%",
-              overflow: "hidden",
-              position: "relative",
-            }}
-          >
-            <RightContent>
-              <JamiiLogo
-                src="/assets/jamii.png"
-                alt="Jamii Biz Logo"
-                width={250}
-                height={250}
-              />
-            </RightContent>
-          </Box>
+          <JamiiLogoContainer>
+            <JamiiLogo src="/assets/jamii.png" alt="Jamii Biz Logo" />
+          </JamiiLogoContainer>
         </RightContent>
       </ContentContainer>
 
-      {/* Dotted curved line */}
+      {/* Curved dotted line */}
       <Box
         sx={{
           position: "absolute",
-          bottom: "200px",
+          bottom: "100px",
           left: 0,
           width: "100%",
-          height: "100px",
           display: "flex",
           justifyContent: "center",
         }}
