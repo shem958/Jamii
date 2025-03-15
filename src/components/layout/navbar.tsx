@@ -1,60 +1,77 @@
 "use client";
 import React from "react";
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Button,
-  IconButton,
-  Box,
-} from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
+import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 const Navbar: React.FC = () => {
   return (
     <AppBar
       position="static"
       sx={{
-        backgroundColor: "#F5F5DC",
+        backgroundColor: "#FEFAE7", // Light cream color matching the screenshot
         boxShadow: "none",
-        padding: "10px 20px",
+        padding: "8px 20px",
       }}
     >
-      <Toolbar sx={{ justifyContent: "space-between" }}>
-        <Box display="flex" alignItems="center">
-          <IconButton edge="start" color="inherit" aria-label="menu">
-            <MenuIcon sx={{ color: "#5A4636" }} />
-          </IconButton>
+      <Toolbar sx={{ justifyContent: "space-between", minHeight: "48px" }}>
+        <Box>
           <Typography
             variant="h6"
-            sx={{ color: "#5A4636", fontWeight: "bold" }}
+            sx={{
+              color: "#333",
+              fontWeight: "600",
+              fontSize: "18px",
+            }}
           >
-            Jamii Cereals and Gen Shop
+            Jamii Cereals and Gen shop
           </Typography>
         </Box>
-        <Box>
+        <Box sx={{ display: "flex", alignItems: "center" }}>
           <Button
-            sx={{ color: "#5A4636", textTransform: "none", fontSize: "16px" }}
+            endIcon={<KeyboardArrowDownIcon />}
+            sx={{
+              color: "#333",
+              textTransform: "none",
+              fontSize: "16px",
+              fontWeight: "normal",
+              mr: 1,
+            }}
           >
             Products
           </Button>
           <Button
-            sx={{ color: "#5A4636", textTransform: "none", fontSize: "16px" }}
+            endIcon={<KeyboardArrowDownIcon />}
+            sx={{
+              color: "#333",
+              textTransform: "none",
+              fontSize: "16px",
+              fontWeight: "normal",
+              mr: 1,
+            }}
           >
             Company
           </Button>
           <Button
-            sx={{ color: "#5A4636", textTransform: "none", fontSize: "16px" }}
+            sx={{
+              color: "#333",
+              textTransform: "none",
+              fontSize: "16px",
+              fontWeight: "normal",
+              mr: 2,
+            }}
           >
-            FAQ
+            Frequently Asked Questions
           </Button>
           <Button
+            variant="contained"
             sx={{
               backgroundColor: "#556B2F",
               color: "white",
               textTransform: "none",
-              fontSize: "16px",
-              marginLeft: "10px",
+              fontSize: "15px",
+              fontWeight: "normal",
+              padding: "6px 16px",
+              borderRadius: "4px",
               "&:hover": { backgroundColor: "#6B8E23" },
             }}
           >
