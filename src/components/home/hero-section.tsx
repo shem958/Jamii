@@ -220,7 +220,7 @@ const HeroSection: React.FC = () => {
 
         <RightSection>
           <CerealBackground />
-          <JamiiLogo src="/jamii-logo.png" alt="Jamii Biz Logo" />
+          <JamiiLogo src="/assets/jamii.png" alt="Jamii Biz Logo" />
         </RightSection>
       </ContentContainer>
 
