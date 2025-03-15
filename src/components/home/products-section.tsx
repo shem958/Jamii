@@ -61,7 +61,7 @@ const ProductsSection: React.FC = () => {
           </HighlightBox>
           <Box
             component="img"
-            src="/path-to-grains-image.png"
+            src="/assets/transform.png"
             alt="Grains and Cereals"
             sx={{ width: "100%", borderRadius: "8px" }}
           />{" "}

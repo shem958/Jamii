@@ -99,7 +99,7 @@ const CentralAvatar = styled(Avatar)({
   fontSize: "24px",
   fontWeight: "bold",
   position: "absolute",
-  bottom: "-40px",
+  bottom: "20px",
   left: "50%",
   transform: "translateX(-50%)",
 });
