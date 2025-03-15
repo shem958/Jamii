@@ -8,7 +8,7 @@ const BackgroundImageBox = styled(Box)({
   position: "relative",
   width: "100%",
   height: "80vh",
-  backgroundImage: "url(/path-to-background-image)", // Replace with your image path
+  backgroundImage: "url(/assets/hero.jpg)", // Replace with your image path
   backgroundSize: "cover",
   backgroundPosition: "center",
   display: "flex",

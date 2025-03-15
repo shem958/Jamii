@@ -1,5 +1,3 @@
-"use client";
-// components/HeroSection.tsx
 import React from "react";
 import {
   Box,
@@ -15,62 +13,76 @@ const BackgroundImageBox = styled(Box)({
   position: "relative",
   width: "100%",
   height: "100vh",
-  backgroundImage: "url(/path-to-jamii-biz-image)", // Replace with your image path
+  backgroundImage: "url(/path-to-cereal-background-image)",
   backgroundSize: "cover",
   backgroundPosition: "center",
   overflow: "hidden",
 });
 
-const Overlay = styled(Box)({
-  position: "absolute",
-  top: 0,
-  left: 0,
-  width: "100%",
-  height: "100%",
-  backgroundColor: "rgba(0, 0, 0, 0.5)", // Adjust for a dark overlay
-});
-
 const HeroContent = styled(Container)({
   position: "relative",
   zIndex: 1,
-  textAlign: "center",
-  color: "white",
+  textAlign: "left",
+  color: "#5A4636",
+});
+
+const LogoImage = styled("img")({
+  position: "absolute",
+  top: "20%",
+  right: "10%",
+  width: "300px",
 });
 
 const HeroSection: React.FC = () => {
   return (
     <BackgroundImageBox>
-      <Overlay />
       <HeroContent maxWidth="md">
-        <Typography variant="h2" component="h1" gutterBottom>
+        <Typography variant="h4" gutterBottom>
           Fresh Selections
         </Typography>
-        <Typography variant="h4" component="h2" gutterBottom>
+        <Typography variant="h5" gutterBottom>
           Experience the richness of wholesome nutrition at Jamii Cereals and
-          Gen Shop.
+          Gen Store 🌿
         </Typography>
-        <Typography variant="h1" component="h3" gutterBottom>
+        <Typography variant="h2" gutterBottom>
           Elevate Your Meals
         </Typography>
-        <Typography variant="h5" component="h4" paragraph>
+        <Typography variant="h6" paragraph>
           Shop premium dry cereals and groceries delivered right to your door or
           visit us at Dagoretti Market.
         </Typography>
-        <Button variant="contained" color="secondary" size="large">
+        <Button
+          variant="contained"
+          style={{ backgroundColor: "#556B2F", color: "white" }}
+        >
           Shop Online
         </Button>
-        <Grid container spacing={2} justifyContent="center" marginTop={4}>
-          <Grid item>
-            <Avatar alt="Avatar 1" src="/path-to-avatar1" />
-          </Grid>
-          <Grid item>
-            <Avatar alt="Avatar 2" src="/path-to-avatar2" />
-          </Grid>
-          <Grid item>
-            <Avatar alt="Avatar 3" src="/path-to-avatar3" />
-          </Grid>
+        <Grid container spacing={2} justifyContent="flex-start" marginTop={4}>
+          {["/avatar1.png", "/avatar2.png", "/avatar3.png"].map(
+            (src, index) => (
+              <Grid item key={index}>
+                <Avatar alt={`Customer ${index + 1}`} src={src} />
+              </Grid>
+            )
+          )}
         </Grid>
+        <Box
+          display="flex"
+          alignItems="center"
+          marginTop={4}
+          padding={2}
+          bgcolor="rgba(90, 70, 54, 0.1)"
+          borderRadius="12px"
+        >
+          <Avatar
+            alt="Profile"
+            src="/path-to-profile-image"
+            style={{ marginRight: "10px" }}
+          />
+          <Typography variant="h6">4,800 Customer Favorites</Typography>
+        </Box>
       </HeroContent>
+      <LogoImage src="/path-to-jamii-biz-logo" alt="Jamii Biz Logo" />
     </BackgroundImageBox>
   );
 };
