@@ -7,7 +7,7 @@ import { styled } from "@mui/system";
 const BackgroundImageBox = styled(Box)({
   position: "relative",
   width: "100%",
-  height: "80vh",
+  height: "60vh",
   backgroundImage: "url(/assets/hero.jpg)", // Replace with your image path
   backgroundSize: "cover",
   backgroundPosition: "center",

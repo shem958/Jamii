@@ -1,35 +1,31 @@
 "use client";
-// components/ProductsSection.tsx
 
 import React from "react";
-import { Box, Typography, Container, Grid, Paper } from "@mui/material";
+import { Box, Typography, Container, Grid } from "@mui/material";
 import { styled } from "@mui/system";
 
 const SectionContainer = styled(Container)({
   paddingTop: "64px",
   paddingBottom: "64px",
-  textAlign: "left", // Align text to left
-});
-
-const HighlightBox = styled(Box)({
-  backgroundColor: "#f5f5f5",
-  padding: "24px",
-  borderRadius: "12px",
-  marginBottom: "32px",
-  position: "relative",
-});
-
-const ProductPaper = styled(Paper)({
-  padding: "24px",
   textAlign: "left",
-  marginBottom: "16px",
-  borderRadius: "10px",
 });
 
-const FooterText = styled(Typography)({
-  marginTop: "32px",
-  maxWidth: "600px",
-  margin: "auto",
+const FeatureList = styled(Box)({
+  display: "flex",
+  flexDirection: "column",
+  gap: "16px",
+});
+
+const FeatureItem = styled(Box)({
+  display: "flex",
+  alignItems: "center",
+  fontSize: "18px",
+});
+
+const Checkmark = styled("span")({
+  color: "green",
+  fontSize: "24px",
+  marginRight: "10px",
 });
 
 const products = [
@@ -52,74 +48,67 @@ const products = [
 
 const ProductsSection: React.FC = () => {
   return (
-    <SectionContainer maxWidth="md">
-      <Typography variant="h4" component="h2" gutterBottom>
-        Transform Your Grocery Shopping with Jamii Cereals and Gen Store
-      </Typography>
-      <Typography variant="body1" component="p" paragraph>
-        Experience the convenience of quality products delivered fresh from our
-        store to your home in Nairobi.
-      </Typography>
-      <Grid
-        container
-        spacing={4}
-        justifyContent="flex-start"
-        alignItems="stretch"
-      >
+    <SectionContainer maxWidth="lg">
+      <Grid container spacing={4} alignItems="center">
+        {/* Text Content */}
         <Grid item xs={12} md={6}>
-          <HighlightBox>
-            <Typography
-              variant="h5"
-              component="p"
-              sx={{
-                fontWeight: "bold",
-                position: "absolute",
-                top: "70%", // Adjust position to match the image
-                left: "50%", // Adjust position to match the image
-                transform: "translate(-50%, -50%)", // Center the text
-                color: "white", // Text color to white
-                zIndex: 1,
-                fontSize: "2rem", // Increase font size to match the image
-              }}
-            >
-              Shop with Confidence
-            </Typography>
+          <Typography
+            variant="h3"
+            component="h2"
+            gutterBottom
+            fontWeight="bold"
+          >
+            Transform Your Grocery Shopping with Jamii Cereals and Gen Store
+          </Typography>
+          <Typography variant="body1" component="p" paragraph>
+            Experience the convenience of quality products delivered fresh from
+            our store to your home in Nairobi.
+          </Typography>
+          <FeatureList>
+            {products.map((product, index) => (
+              <FeatureItem key={index}>
+                <Checkmark>&#10003;</Checkmark>
+                <Box>
+                  <Typography variant="h6" component="h3" fontWeight="bold">
+                    {product.title}
+                  </Typography>
+                  <Typography variant="body1">{product.description}</Typography>
+                </Box>
+              </FeatureItem>
+            ))}
+          </FeatureList>
+        </Grid>
+
+        {/* Image Section */}
+        <Grid item xs={12} md={6}>
+          <Box sx={{ position: "relative" }}>
             <Box
               component="img"
               src="/assets/transform.png"
               alt="Grains and Cereals"
-              sx={{ width: "100%", borderRadius: "8px" }}
+              sx={{ width: "100%", borderRadius: "8px", boxShadow: 3 }}
             />
-          </HighlightBox>
-        </Grid>
-        <Grid item xs={12} md={6}>
-          {products.map((product, index) => (
-            <ProductPaper elevation={3} key={index}>
-              <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
-                <Box
-                  sx={{
-                    width: "10px",
-                    height: "10px",
-                    borderRadius: "50%",
-                    backgroundColor: "green",
-                    marginRight: "10px",
-                  }}
-                />
-                <Typography variant="h6" component="h3" gutterBottom>
-                  {product.title}
-                </Typography>
-              </Box>
-              <Typography variant="body1" component="p">
-                {product.description}
-              </Typography>
-            </ProductPaper>
-          ))}
+            <Typography
+              variant="h5"
+              component="p"
+              sx={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                color: "white",
+                fontWeight: "bold",
+                fontSize: "1.5rem",
+                backgroundColor: "rgba(0, 0, 0, 0.7)",
+                padding: "8px 16px",
+                borderRadius: "8px",
+              }}
+            >
+              Shop with Confidence
+            </Typography>
+          </Box>
         </Grid>
       </Grid>
-      <FooterText variant="body1">
-        Committed to ensuring freshness and reliability, we strive to enhance
-        your grocery shopping experience.
-      </FooterText>
     </SectionContainer>
   );
 };
