@@ -8,6 +8,7 @@ const SectionContainer = styled(Container)({
   paddingTop: "64px",
   paddingBottom: "64px",
   textAlign: "left",
+  maxHeight: "100vh",
 });
 
 const FeatureList = styled(Box)({
@@ -60,7 +61,7 @@ const ProductsSection: React.FC = () => {
           >
             Transform Your Grocery Shopping with Jamii Cereals and Gen Store
           </Typography>
-          <Typography variant="body1" component="p" paragraph>
+          <Typography variant="body1" component="p" paragraph fontSize={24}>
             Experience the convenience of quality products delivered fresh from
             our store to your home in Nairobi.
           </Typography>
@@ -69,10 +70,12 @@ const ProductsSection: React.FC = () => {
               <FeatureItem key={index}>
                 <Checkmark>&#10003;</Checkmark>
                 <Box>
-                  <Typography variant="h6" component="h3" fontWeight="bold">
+                  <Typography variant="h6" component="h3" fontSize={27}>
                     {product.title}
                   </Typography>
-                  <Typography variant="body1">{product.description}</Typography>
+                  <Typography variant="body1" fontSize={25}>
+                    {product.description}
+                  </Typography>
                 </Box>
               </FeatureItem>
             ))}
@@ -86,7 +89,11 @@ const ProductsSection: React.FC = () => {
               component="img"
               src="/assets/transform.png"
               alt="Grains and Cereals"
-              sx={{ width: "100%", borderRadius: "8px", boxShadow: 3 }}
+              sx={{
+                width: "100%",
+                borderRadius: "8px",
+                boxShadow: 3,
+              }}
             />
             <Typography
               variant="h5"
