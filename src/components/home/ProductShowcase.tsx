@@ -127,7 +127,7 @@ const ProductsShowcase: React.FC = () => {
                 <Typography
                   variant="h5"
                   component="div"
-                  style={{ fontWeight: "bold", marginBottom: "8px" }}
+                  style={{ fontWeight: "bold", marginBottom: "30px" }}
                 >
                   {product.title}
                 </Typography>
