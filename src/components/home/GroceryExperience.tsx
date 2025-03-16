@@ -2,6 +2,13 @@
 import React from "react";
 import { Typography, Box, Container } from "@mui/material";
 import { styled } from "@mui/system";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faLayerGroup,
+  faAddressCard,
+  faGlobe,
+  faThumbsUp,
+} from "@fortawesome/free-solid-svg-icons";
 
 const SectionContainer = styled(Container)({
   position: "relative",
@@ -126,13 +133,13 @@ const productData = [
       title: "Nutrient-Packed Lentils",
       description:
         "Discover our premium lentils, loaded with protein and fiber, perfect for hearty stews and satisfying meals.",
-      icon: "fa-layer-group",
+      icon: faLayerGroup,
     },
     {
       title: "Fresh Dry Maize for Your Recipes",
       description:
         "Enjoy the quality of our fresh dry maize, ready for your favorite traditional and modern recipes.",
-      icon: "fa-address-card",
+      icon: faAddressCard,
     },
   ],
   [
@@ -140,13 +147,13 @@ const productData = [
       title: "Versatile Beans for Every Dish",
       description:
         "Our beans are perfect for various recipes, making them a staple in your kitchen for healthy, delicious meals.",
-      icon: "fa-globe",
+      icon: faGlobe,
     },
     {
       title: "Gluten-Free Sorghum & Millet Flour",
       description:
         "Discover our gluten-free options, perfect for baking and tradition, nutritious and versatile for any meal.",
-      icon: "fa-thumbs-up",
+      icon: faThumbsUp,
     },
   ],
 ];
@@ -175,11 +182,9 @@ const GroceryExperience: React.FC = () => {
                 <ProductItem key={`${colIndex}-${prodIndex}`}>
                   <IconColumn>
                     <IconCircle>
-                      <i
-                        className={`fa-solid ${product.icon}`}
-                        aria-hidden="true"
-                      ></i>
+                      <FontAwesomeIcon icon={product.icon} size="lg" />
                     </IconCircle>
+
                     {prodIndex === 0 && <DottedLine />}
                   </IconColumn>
 
