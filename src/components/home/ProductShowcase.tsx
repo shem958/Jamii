@@ -118,7 +118,7 @@ const ProductsShowcase: React.FC = () => {
                 src={product.image}
                 alt={product.title}
                 layout="responsive"
-                width={500}
+                width={400}
                 height={300}
                 style={{ objectFit: "cover", borderRadius: "8px 8px 0px 0px" }}
               />
