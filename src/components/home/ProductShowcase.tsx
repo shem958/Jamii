@@ -16,73 +16,77 @@ const SectionContainer = styled(Container)({
 const HeadingContainer = styled("div")({
   marginBottom: "32px",
   display: "flex",
-  flexDirection: "column", // Stack items vertically by default
-  alignItems: "center", // Center items horizontally
+  flexDirection: "column",
+  alignItems: "center",
   width: "100%",
-  textAlign: "center", // Ensure text is centered
+  textAlign: "center",
   "@media (min-width: 768px)": {
-    // Adjust for larger screens
-    flexDirection: "row", // Display items in a row
-    justifyContent: "center", // Space out items evenly
-    textAlign: "left", // Align text to the left
+    flexDirection: "row",
+    justifyContent: "center",
+    textAlign: "left",
   },
 });
 
-const MainHeading = styled(Typography)`
-  font-weight: bold !important;
-  margin-bottom: 16px !important;
-  font-size: 2.5rem !important;
-  line-height: 1.2 !important;
-  max-width: 50%; // Limit width to 50% on larger screens
-  text-align: inherit !important;
-`;
+const MainHeading = styled(Typography)({
+  fontWeight: "bold",
+  marginBottom: "16px",
+  fontSize: "2.5rem",
+  lineHeight: "1.2",
+  maxWidth: "50%",
+  textAlign: "inherit",
+});
 
-const SubHeading = styled(Typography)`
-  color: #555 !important;
-  font-size: 1.25rem !important;
-  max-width: 50%; // Limit width to 50% on larger screens
-  text-align: inherit !important;
-`;
+const SubHeading = styled(Typography)({
+  color: "#555",
+  fontSize: "1.25rem",
+  maxWidth: "50%",
+  textAlign: "inherit",
+});
 
 const ProductCard = styled(Card)({
   height: "100%",
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
-  backgroundColor: "#f5f5f5", // Grayish background
+  backgroundColor: "#f5f5f5",
   borderRadius: "8px",
   boxShadow: "0px 4px 12px rgba(0,0,0,0.1)",
-  position: "relative", // For positioning the heart icon
+  position: "relative",
+  overflow: "hidden", // Ensures the icon doesn't overflow the card
 });
 
 const ProductCardContent = styled(CardContent)({
   flexGrow: 1,
 });
 
+// Updated Heart Icon styling based on the first image
+
 const HeartIcon = styled("i")({
   position: "absolute",
-  top: "16px",
-  right: "16px",
-  color: "#ff6a6a", // Red color for the heart icon
-  fontSize: "24px", // Adjust size
+  top: "242px", // Moves it exactly to the boundary
+  right: "16px", // Keeps it on the right
+  transform: "translateY(-50%)", // Ensures it's centered at the boundary
+  color: "#ff6a6a",
+  fontSize: "40px",
+  zIndex: 2,
 });
 
 const products = [
   {
     title: "Nutritious Lentils",
-    image: "/assets/original.jpg", // Replace with your image path
+    image: "/assets/original.jpg",
     description:
       "Perfect for hearty stews, packed with protein and fiber to nourish your body.",
   },
   {
     title: "Versatile Beans",
-    image: "/assets/beans.jpg", // Replace with your image path
+    image: "/assets/beans.jpg",
     description:
       "Add nutrition and flavor to countless recipes for a nutritious meal option.",
   },
   {
     title: "Fresh Dry Maize",
-    image: "/assets/maize.jpg", // Replace with your image path
+    image: "/assets/maize.jpg",
     description:
       "Ready for your favorite culinary creations and packed with wholesome flavor.",
   },
@@ -107,11 +111,8 @@ const ProductsShowcase: React.FC = () => {
         {products.map((product, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
             <ProductCard>
-              {/* Heart Icon */}
-              <HeartIcon
-                className="fa-solid fa-heart"
-                aria-hidden="true"
-              ></HeartIcon>
+              {/* Updated Heart Icon */}
+              <HeartIcon className="fa-solid fa-heart" aria-hidden="true" />
               {/* Product Image */}
               <Image
                 src={product.image}
