@@ -11,8 +11,9 @@ export default function Home() {
     <>
       <HeroSection />
       <ExperienceSection />
-      <ProductsSection />
       <GroceryExperience />
+
+      <ProductsSection />
       <HeroBanner />
       <ProductShowcase />
       <TestimonialSection />
