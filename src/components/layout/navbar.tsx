@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
       sx={{
         backgroundColor: "transparent",
         boxShadow: "none",
-        padding: "8px 20px",
+        padding: "16px 40px", // Adjusted padding for better spacing
       }}
     >
       <Toolbar sx={{ justifyContent: "space-between", minHeight: "64px" }}>
@@ -20,11 +20,12 @@ const Navbar: React.FC = () => {
             variant="h6"
             sx={{
               color: "#333",
-              fontWeight: "600",
-              fontSize: "22px",
+              fontWeight: "500", // Slightly lighter weight for a cleaner look
+              fontSize: "18px", // Adjusted to match the design
+              fontFamily: "sans-serif",
             }}
           >
-            Jamii Cereals and Gen Shop
+            Jamii Cereals and GEN Shop
           </Typography>
         </Box>
 
@@ -50,13 +51,13 @@ const Navbar: React.FC = () => {
           <Button
             variant="contained"
             sx={{
-              backgroundColor: "#556B2F",
+              backgroundColor: "#556B2F", // Dark green/brown color
               color: "white",
               textTransform: "none",
               fontSize: "15px",
               fontWeight: "normal",
               padding: "8px 20px",
-              borderRadius: "6px",
+              borderRadius: "20px", // Rounded edges as per the design
               "&:hover": { backgroundColor: "#6B8E23" },
             }}
           >
