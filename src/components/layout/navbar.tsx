@@ -8,51 +8,56 @@ const Navbar: React.FC = () => {
     <AppBar
       position="static"
       sx={{
-        backgroundColor: "transparent", // Matches the image
-        boxShadow: "none", // Matches the image
-        padding: "8px 20px", // Matches the image
+        backgroundColor: "transparent",
+        boxShadow: "none",
+        padding: "8px 20px",
       }}
     >
       <Toolbar sx={{ justifyContent: "space-between", minHeight: "64px" }}>
+        {/* Brand Name */}
         <Box>
           <Typography
             variant="h6"
             sx={{
-              color: "#333", // Matches the dark color in the image
-              fontWeight: "600", // Matches the bold style
-              fontSize: "22px", // Matches the size in the image
+              color: "#333",
+              fontWeight: "600",
+              fontSize: "22px",
             }}
           >
-            Jamii Cereals and Gen shop
+            Jamii Cereals and Gen Shop
           </Typography>
         </Box>
+
+        {/* Navigation Links */}
         <Box sx={{ display: "flex", alignItems: "center" }}>
-          <Box sx={{ display: "flex", alignItems: "center" }}>
-            <Typography sx={{ color: "#333", fontSize: "16px", mr: 0.5 }}>
-              Products
-            </Typography>
-            <KeyboardArrowDownIcon sx={{ color: "#333", fontSize: "18px" }} />{" "}
-          </Box>
-          <Box sx={{ display: "flex", alignItems: "center", mx: 3 }}>
-            <Typography sx={{ color: "#333", fontSize: "16px", mr: 0.5 }}>
-              Company
-            </Typography>
-            <KeyboardArrowDownIcon sx={{ color: "#333", fontSize: "18px" }} />{" "}
-          </Box>
+          {["Products", "Company"].map((item, index) => (
+            <Box
+              key={index}
+              sx={{ display: "flex", alignItems: "center", mx: 2 }}
+            >
+              <Typography sx={{ color: "#333", fontSize: "16px", mr: 0.5 }}>
+                {item}
+              </Typography>
+              <KeyboardArrowDownIcon sx={{ color: "#333", fontSize: "18px" }} />
+            </Box>
+          ))}
+
           <Typography sx={{ color: "#333", fontSize: "16px", mr: 3 }}>
             Frequently Asked Questions
           </Typography>
+
+          {/* Call-to-Action Button */}
           <Button
             variant="contained"
             sx={{
-              backgroundColor: "#556B2F", // Matches the dark green color
-              color: "white", // Matches the white text
-              textTransform: "none", // Matches the non-uppercase text
-              fontSize: "15px", // Matches the size
-              fontWeight: "normal", // Matches the weight
-              padding: "8px 20px", // Matches the padding
-              borderRadius: "6px", // Matches the rounded corners
-              "&:hover": { backgroundColor: "#6B8E23" }, // Hover effect matches
+              backgroundColor: "#556B2F",
+              color: "white",
+              textTransform: "none",
+              fontSize: "15px",
+              fontWeight: "normal",
+              padding: "8px 20px",
+              borderRadius: "6px",
+              "&:hover": { backgroundColor: "#6B8E23" },
             }}
           >
             Get in Touch
