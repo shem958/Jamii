@@ -23,25 +23,24 @@ const Navbar: React.FC = () => {
               fontSize: "22px", // Matches the size in the image
             }}
           >
-            Jamii Cereals and Gen shop // Matches the text in the image
+            Jamii Cereals and Gen shop
           </Typography>
         </Box>
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <Typography sx={{ color: "#333", fontSize: "16px", mr: 0.5 }}>
-              Products // Matches the text
+              Products
             </Typography>
             <KeyboardArrowDownIcon sx={{ color: "#333", fontSize: "18px" }} />{" "}
           </Box>
           <Box sx={{ display: "flex", alignItems: "center", mx: 3 }}>
             <Typography sx={{ color: "#333", fontSize: "16px", mr: 0.5 }}>
-              Company // Matches the text
+              Company
             </Typography>
             <KeyboardArrowDownIcon sx={{ color: "#333", fontSize: "18px" }} />{" "}
           </Box>
           <Typography sx={{ color: "#333", fontSize: "16px", mr: 3 }}>
-            Frequently Asked Questions // Matches the text, no arrow as in the
-            image
+            Frequently Asked Questions
           </Typography>
           <Button
             variant="contained"
@@ -56,7 +55,7 @@ const Navbar: React.FC = () => {
               "&:hover": { backgroundColor: "#6B8E23" }, // Hover effect matches
             }}
           >
-            Get in Touch // Matches the text
+            Get in Touch
           </Button>
         </Box>
       </Toolbar>
