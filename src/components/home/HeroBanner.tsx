@@ -7,13 +7,13 @@ const BackgroundImageBox = styled(Box)({
   position: "relative",
   width: "100%",
   height: "60vh",
-  backgroundImage: "url(/assets/hero.jpg)", // This is correct - keep your image path
+  backgroundImage: "url(/assets/hero.jpg)", // Keep your image path
   backgroundSize: "cover",
   backgroundPosition: "center",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  color: "black", // Changed to black to match the text in the image
+  color: "black",
   textAlign: "center",
 });
 
@@ -23,7 +23,7 @@ const Overlay = styled(Box)({
   left: 0,
   width: "100%",
   height: "100%",
-  backgroundColor: "rgba(0, 0, 0, 0.2)", // Lighter overlay to match image
+  backgroundColor: "rgba(255, 255, 255, 0.7)", // Increased opacity with white overlay to match design
 });
 
 const HeroContent = styled(Container)({
@@ -41,7 +41,7 @@ const HeroBanner: React.FC = () => {
         </Typography>
         <Box
           display="flex"
-          flexDirection="column" // Changed to column to stack buttons vertically
+          flexDirection="column"
           alignItems="center"
           gap={2}
           mt={3}
@@ -52,19 +52,19 @@ const HeroBanner: React.FC = () => {
             size="large"
             sx={{
               borderRadius: "20px",
-              backgroundColor: "#4b5320", // Dark olive green color
+              backgroundColor: "#4b5320",
               width: "150px",
             }}
           >
             Shop Online
           </Button>
           <Button
-            variant="contained" // Changed from outlined to contained
+            variant="contained"
             color="primary"
             size="large"
             sx={{
               borderRadius: "20px",
-              backgroundColor: "#4b5320", // Dark olive green color
+              backgroundColor: "#4b5320",
               width: "150px",
             }}
           >
