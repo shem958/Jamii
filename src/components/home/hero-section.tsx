@@ -28,7 +28,7 @@ const ContentContainer = styled(Box)({
 const LeftContent = styled(Box)({
   width: "50%",
   paddingLeft: "40px",
-  zIndex: 1, // Ensure content is above the background image
+  zIndex: 1,
 });
 
 const RightContent = styled(Box)({
@@ -42,10 +42,20 @@ const RightContent = styled(Box)({
 const FreshSelectionsBadge = styled(Box)({
   display: "inline-flex",
   alignItems: "center",
-  backgroundColor: "#F8EFE0", // Beige/cream color
+  backgroundColor: "#F8EFE0",
   padding: "8px 20px",
   borderRadius: "30px",
-  marginBottom: "16px",
+  marginBottom: "32px",
+});
+
+const FreshSelectionsButton = styled(Box)({
+  backgroundColor: "#4D3319",
+  color: "white",
+  padding: "4px 12px",
+  borderRadius: "20px",
+  marginRight: "12px",
+  fontSize: "14px",
+  fontWeight: "600",
 });
 
 const JamiiLogoContainer = styled(Box)({
@@ -57,16 +67,17 @@ const JamiiLogoContainer = styled(Box)({
   alignItems: "flex-end",
   overflow: "hidden",
   position: "absolute",
-  right: "-300px", // Adjusted to position on the right side
-  top: "-200px",
-  backgroundImage: "url('/assets/cereal-texture.png')", // Background image of grains
+  right: "-400px",
+  top: "-300px",
+  backgroundImage: "url('/assets/cereal-texture.png')",
   backgroundSize: "cover",
+  backgroundPosition: "center",
 });
 
 const JamiiLogo = styled("img")({
   width: "100%",
   height: "100%",
-  objectFit: "contain", // Adjusted to ensure the logo fits properly
+  objectFit: "contain",
 });
 
 const AvatarGroup = styled(Box)({
@@ -77,7 +88,7 @@ const AvatarGroup = styled(Box)({
 });
 
 const StatsBox = styled(Box)({
-  backgroundColor: "rgba(211, 211, 211, 0.8)", // Light gray with opacity
+  backgroundColor: "rgba(211, 211, 211, 0.8)",
   padding: "18px 26px",
   borderRadius: "15px",
   marginLeft: "20px",
@@ -98,9 +109,10 @@ const CustomerAvatar = styled(Avatar)({
   width: "80px",
   height: "80px",
   position: "absolute",
-  left: "180px", // Positioned at the end of the dotted line
+  left: "180px",
   top: "50%",
   transform: "translateY(-50%)",
+  border: "2px solid #ccc",
 });
 
 const HeroSection: React.FC = () => {
@@ -109,22 +121,15 @@ const HeroSection: React.FC = () => {
       <ContentContainer>
         <LeftContent>
           <FreshSelectionsBadge>
+            <FreshSelectionsButton>Fresh Selections</FreshSelectionsButton>
             <Typography sx={{ fontWeight: "600", color: "#4D3319", mr: 1 }}>
-              EXPERIENCE THE RICHNESS OF WHOLESOME NUTRITION AT
-            </Typography>
-            <Typography sx={{ fontWeight: "600", color: "#4D3319" }}>
-              Jamii Cereals and GEN STORE
+              EXPERIENCE THE RICHNESS OF WHOLESOME NUTRITION AT Jamii Cereals
+              and GEN STORE
             </Typography>
             <Box
-              component="span"
-              sx={{
-                ml: 1,
-                width: "16px",
-                height: "16px",
-                backgroundColor: "#FFD700", // Yellow star
-                clipPath:
-                  "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)",
-              }}
+              component="img"
+              src="/assets/star-icon.png"
+              sx={{ width: "16px", height: "16px", ml: 1 }}
             />
           </FreshSelectionsBadge>
 
@@ -134,7 +139,7 @@ const HeroSection: React.FC = () => {
               fontWeight: "bold",
               lineHeight: 1.1,
               color: "#222",
-              mb: 2,
+              mb: 3,
               maxWidth: "500px",
               fontFamily: "sans-serif",
             }}
@@ -143,7 +148,7 @@ const HeroSection: React.FC = () => {
           </Typography>
 
           <Typography
-            sx={{ fontSize: "18px", color: "#333", mb: 4, maxWidth: "90%" }}
+            sx={{ fontSize: "18px", color: "#333", mb: 5, maxWidth: "90%" }}
           >
             Shop premium dry cereals and groceries delivered right to your door
             or visit us at Dagoretti Market.
@@ -152,12 +157,12 @@ const HeroSection: React.FC = () => {
           <Button
             variant="contained"
             sx={{
-              backgroundColor: "#556B2F", // Dark green/brown color
+              backgroundColor: "#556B2F",
               color: "white",
               textTransform: "none",
               fontSize: "18px",
               padding: "12px 28px",
-              borderRadius: "20px", // Rounded edges
+              borderRadius: "20px",
               boxShadow: "none",
               "&:hover": { backgroundColor: "#6B8E23" },
             }}
@@ -178,13 +183,12 @@ const HeroSection: React.FC = () => {
                     left: `${index * 25}px`,
                     zIndex: 5 - index,
                   }}
-                  src={`/assets/customer-${index + 1}.png`} // Placeholder for customer images
+                  src={`/assets/customer-${index + 1}.png`}
                 />
               ))}
             </Box>
             <DottedLine />
-            <CustomerAvatar src="/assets/customer-with-basket.png" />{" "}
-            {/* Placeholder for customer with basket */}
+            <CustomerAvatar src="/assets/customer-with-basket.png" />
             <StatsBox>
               <Typography
                 sx={{ fontWeight: "bold", fontSize: "20px", color: "#333" }}
@@ -201,7 +205,7 @@ const HeroSection: React.FC = () => {
         <RightContent>
           <JamiiLogoContainer>
             <JamiiLogo
-              src="/assets/jamii-biz-logo.png" // Placeholder for "Jamii BIZ" logo
+              src="/assets/jamii-biz-logo.png"
               alt="Jamii Cereals and Gen Store Logo"
             />
           </JamiiLogoContainer>
