@@ -68,8 +68,8 @@ const JamiiLogoContainer = styled(Box)({
   overflow: "hidden",
   position: "absolute",
   right: "-400px",
-  top: "-300px",
-  backgroundImage: "url('/assets/cereal-texture.png')",
+  top: "-400px",
+  backgroundImage: "url('/assets/jamii.png')",
   backgroundSize: "cover",
   backgroundPosition: "center",
 });
@@ -93,14 +93,16 @@ const StatsBox = styled(Box)({
   borderRadius: "15px",
   marginLeft: "20px",
   boxShadow: "none",
+  width: "300px",
+  height: "100px",
 });
 
 const DottedLine = styled(Box)({
-  position: "absolute",
+  position: "relative",
   width: "120px",
   height: "2px",
   background: "transparent",
-  borderTop: "2px dashed #999",
+  borderTop: "3px dashed #999",
   left: "50px",
   top: "50%",
 });
@@ -123,8 +125,8 @@ const HeroSection: React.FC = () => {
           <FreshSelectionsBadge>
             <FreshSelectionsButton>Fresh Selections</FreshSelectionsButton>
             <Typography sx={{ fontWeight: "600", color: "#4D3319", mr: 1 }}>
-              EXPERIENCE THE RICHNESS OF WHOLESOME NUTRITION AT Jamii Cereals
-              and GEN STORE
+              Experience the richness of wholesome nutrition at Jamii Cereals
+              and Gen Store
             </Typography>
             <Box
               component="img"
@@ -144,7 +146,7 @@ const HeroSection: React.FC = () => {
               fontFamily: "sans-serif",
             }}
           >
-            ELEVATE YOUR MEALS
+            Elevate Your Meals
           </Typography>
 
           <Typography
