@@ -10,10 +10,10 @@ const MainContainer = styled(Box)({
   minHeight: "calc(100vh - 64px)",
   position: "relative",
   backgroundColor: "#FFFFFF",
-  padding: "80px 0",
+  padding: "0", // Removed padding to ensure no scrolling needed
   overflow: "hidden",
   alignItems: "center",
-  backgroundImage: "url('/assets/cereal-background.png')", // Add textured background
+  backgroundImage: "url('/assets/cereal-background.png')",
   backgroundSize: "cover",
   backgroundPosition: "center",
 });
@@ -25,45 +25,42 @@ const ContentContainer = styled(Box)({
   display: "flex",
   alignItems: "center",
   position: "relative",
+  height: "calc(100vh - 64px)", // Ensure it takes the full viewport height minus navbar
 });
 
 const LeftContent = styled(Box)({
-  width: "60%",
+  width: "50%", // Reduced from 60% to match image proportions
   paddingLeft: "40px",
 });
 
 const RightContent = styled(Box)({
-  width: "40%",
+  width: "50%", // Increased from 40% to match image proportions
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   position: "relative",
-  marginTop: "-50px", // Shift logo upward
 });
 
+// Using this styled component instead of inline styles
 const FreshSelectionsBadge = styled(Box)({
-  display: "inline-block",
-  backgroundColor: "#F8EFE0",
-  padding: "10px 24px",
+  display: "inline-flex",
+  alignItems: "center",
+  backgroundColor: "#F8EFE0", // Light beige color from the image
+  padding: "8px 20px",
   borderRadius: "30px",
-  fontSize: "16px",
-  fontWeight: "bold",
-  color: "#4D3319",
-  boxShadow: "0 2px 5px rgba(0, 0, 0, 0.2)",
+  marginBottom: "16px",
 });
 
 const JamiiLogoContainer = styled(Box)({
-  width: "400px", // Increase logo size
-  height: "400px",
+  width: "450px", // Adjusted to match image proportion
+  height: "450px",
   borderRadius: "50%",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   overflow: "hidden",
   position: "relative",
-  backgroundColor: "white",
-  boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.15)",
-  backgroundImage: "url('/assets/cereal-texture.png')", // Add textured background around logo
+  backgroundImage: "url('/assets/cereal-texture.png')",
   backgroundSize: "cover",
 });
 
@@ -76,32 +73,16 @@ const JamiiLogo = styled("img")({
 const AvatarGroup = styled(Box)({
   display: "flex",
   alignItems: "center",
-  marginTop: "40px",
+  marginTop: "30px",
   position: "relative",
 });
 
 const StatsBox = styled(Box)({
-  backgroundColor: "rgba(255, 255, 255, 0.8)", // Semi-transparent glassmorphic effect
+  backgroundColor: "rgba(211, 211, 211, 0.8)", // More silver/gray as in the image
   padding: "18px 26px",
   borderRadius: "15px",
-  marginLeft: "16px",
-  boxShadow: "0px 4px 10px rgba(0,0,0,0.15)",
-  backdropFilter: "blur(8px)",
-});
-
-const CentralAvatar = styled(Avatar)({
-  width: "80px",
-  height: "80px",
-  border: "4px solid white",
-  boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
-  backgroundColor: "#6B8E23",
-  color: "white",
-  fontSize: "24px",
-  fontWeight: "bold",
-  position: "absolute",
-  bottom: "20px",
-  left: "50%",
-  transform: "translateX(-50%)",
+  marginLeft: "120px", // Increased to match image spacing
+  boxShadow: "none", // Removed shadow to match the image
 });
 
 const HeroSection: React.FC = () => {
@@ -109,22 +90,26 @@ const HeroSection: React.FC = () => {
     <MainContainer>
       <ContentContainer>
         <LeftContent>
-          <FreshSelectionsBadge>Fresh Selections</FreshSelectionsBadge>
+          <FreshSelectionsBadge>
+            <Typography sx={{ fontWeight: "600", color: "#4D3319" }}>
+              Fresh Selections
+            </Typography>
+          </FreshSelectionsBadge>
 
           <Typography
-            sx={{ fontSize: "20px", color: "#333", mb: 2, maxWidth: "95%" }}
+            sx={{ fontSize: "18px", color: "#333", mb: 2, maxWidth: "90%" }}
           >
-            Experience the richness of wholesome nutrition at Jamil Cereals and
+            Experience the richness of wholesome nutrition at Jamii Cereals and
             Gen Store 🌿
           </Typography>
 
           <Typography
             sx={{
-              fontSize: "75px",
+              fontSize: "64px", // Reduced to match the image proportion
               fontWeight: "bold",
               lineHeight: 1.1,
               color: "#222",
-              mb: 3,
+              mb: 2,
               maxWidth: "500px",
             }}
           >
@@ -132,7 +117,7 @@ const HeroSection: React.FC = () => {
           </Typography>
 
           <Typography
-            sx={{ fontSize: "20px", color: "#333", mb: 3, maxWidth: "95%" }}
+            sx={{ fontSize: "18px", color: "#333", mb: 4, maxWidth: "90%" }}
           >
             Shop premium dry cereals and groceries delivered right to your door
             or visit us at Dagoretti Market.
@@ -146,8 +131,8 @@ const HeroSection: React.FC = () => {
               textTransform: "none",
               fontSize: "18px",
               padding: "12px 28px",
-              borderRadius: "8px",
-              boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)", // Add subtle shadow
+              borderRadius: "6px", // Slightly reduced to match image
+              boxShadow: "none", // Removed shadow to match the image
               "&:hover": { backgroundColor: "#6B8E23" },
             }}
           >
@@ -160,17 +145,24 @@ const HeroSection: React.FC = () => {
                 <Avatar
                   key={index}
                   sx={{
-                    width: 45,
-                    height: 45,
-                    backgroundColor: "#ccc",
-                    border: "3px solid white",
+                    width: 40,
+                    height: 40,
+                    backgroundColor:
+                      index === 0
+                        ? "#FF6B6B"
+                        : index === 1
+                        ? "#FF9E6B"
+                        : index === 2
+                        ? "#6B8E23"
+                        : index === 3
+                        ? "#4682B4"
+                        : "#FF4081",
+                    border: "2px solid white",
                     position: "absolute",
-                    left: `${index * 28}px`,
+                    left: `${index * 25}px`,
                     zIndex: 5 - index,
                   }}
-                >
-                  C
-                </Avatar>
+                />
               ))}
             </Box>
             <StatsBox>
@@ -190,13 +182,11 @@ const HeroSection: React.FC = () => {
           <JamiiLogoContainer>
             <JamiiLogo
               src="/assets/jamii.png"
-              alt="Jamil Cereals and Gen Store Logo"
+              alt="Jamii Cereals and Gen Store Logo"
             />
           </JamiiLogoContainer>
         </RightContent>
       </ContentContainer>
-
-      <CentralAvatar>C</CentralAvatar>
     </MainContainer>
   );
 };
