@@ -51,14 +51,16 @@ const FreshSelectionsBadge = styled(Box)({
 });
 
 const JamiiLogoContainer = styled(Box)({
-  width: "450px",
-  height: "450px",
+  width: "900px",
+  height: "800px",
   borderRadius: "50%",
   display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
+  justifyContent: "flex-end",
+  alignItems: "flex-end",
   overflow: "hidden",
-  position: "relative",
+  position: "absolute",
+  left: "-20px",
+  top: "-500px",
   backgroundImage: "url('/assets/cereal-texture.png')",
   backgroundSize: "cover",
 });
@@ -80,7 +82,7 @@ const StatsBox = styled(Box)({
   backgroundColor: "rgba(211, 211, 211, 0.8)",
   padding: "18px 26px",
   borderRadius: "15px",
-  marginLeft: "120px",
+  marginLeft: "20px",
   boxShadow: "none",
 });
 
