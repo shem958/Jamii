@@ -10,12 +10,12 @@ const MainContainer = styled(Box)({
   minHeight: "calc(100vh - 64px)",
   position: "relative",
   backgroundColor: "#FFFFFF",
-  padding: "0", // Removed padding to ensure no scrolling needed
+  padding: "0",
   overflow: "hidden",
   alignItems: "center",
   backgroundImage: "url('/assets/cereal-background.png')",
   backgroundSize: "cover",
-  backgroundPosition: "center",
+  backgroundPosition: "right center", // Adjusted to match the image
 });
 
 const ContentContainer = styled(Box)({
@@ -25,34 +25,33 @@ const ContentContainer = styled(Box)({
   display: "flex",
   alignItems: "center",
   position: "relative",
-  height: "calc(100vh - 64px)", // Ensure it takes the full viewport height minus navbar
+  height: "calc(100vh - 64px)",
 });
 
 const LeftContent = styled(Box)({
-  width: "50%", // Reduced from 60% to match image proportions
+  width: "50%",
   paddingLeft: "40px",
 });
 
 const RightContent = styled(Box)({
-  width: "50%", // Increased from 40% to match image proportions
+  width: "50%",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   position: "relative",
 });
 
-// Using this styled component instead of inline styles
 const FreshSelectionsBadge = styled(Box)({
   display: "inline-flex",
   alignItems: "center",
-  backgroundColor: "#F8EFE0", // Light beige color from the image
+  backgroundColor: "#F8EFE0",
   padding: "8px 20px",
   borderRadius: "30px",
   marginBottom: "16px",
 });
 
 const JamiiLogoContainer = styled(Box)({
-  width: "450px", // Adjusted to match image proportion
+  width: "450px",
   height: "450px",
   borderRadius: "50%",
   display: "flex",
@@ -78,11 +77,11 @@ const AvatarGroup = styled(Box)({
 });
 
 const StatsBox = styled(Box)({
-  backgroundColor: "rgba(211, 211, 211, 0.8)", // More silver/gray as in the image
+  backgroundColor: "rgba(211, 211, 211, 0.8)",
   padding: "18px 26px",
   borderRadius: "15px",
-  marginLeft: "120px", // Increased to match image spacing
-  boxShadow: "none", // Removed shadow to match the image
+  marginLeft: "120px",
+  boxShadow: "none",
 });
 
 const HeroSection: React.FC = () => {
@@ -105,7 +104,7 @@ const HeroSection: React.FC = () => {
 
           <Typography
             sx={{
-              fontSize: "64px", // Reduced to match the image proportion
+              fontSize: "64px",
               fontWeight: "bold",
               lineHeight: 1.1,
               color: "#222",
@@ -131,8 +130,8 @@ const HeroSection: React.FC = () => {
               textTransform: "none",
               fontSize: "18px",
               padding: "12px 28px",
-              borderRadius: "6px", // Slightly reduced to match image
-              boxShadow: "none", // Removed shadow to match the image
+              borderRadius: "6px",
+              boxShadow: "none",
               "&:hover": { backgroundColor: "#6B8E23" },
             }}
           >
@@ -165,6 +164,17 @@ const HeroSection: React.FC = () => {
                 />
               ))}
             </Box>
+            <Box
+              sx={{
+                position: "absolute",
+                width: "120px",
+                height: "2px",
+                background: "transparent",
+                borderTop: "2px dashed #999",
+                left: "50px",
+                top: "50%",
+              }}
+            />
             <StatsBox>
               <Typography
                 sx={{ fontWeight: "bold", fontSize: "20px", color: "#333" }}
