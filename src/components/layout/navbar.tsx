@@ -1,4 +1,3 @@
-// Navbar.tsx
 "use client";
 import React from "react";
 import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
@@ -9,9 +8,9 @@ const Navbar: React.FC = () => {
     <AppBar
       position="static"
       sx={{
-        backgroundColor: "transparent", // Changed to transparent to match image
-        boxShadow: "none",
-        padding: "8px 20px",
+        backgroundColor: "transparent", // Matches the image
+        boxShadow: "none", // Matches the image
+        padding: "8px 20px", // Matches the image
       }}
     >
       <Toolbar sx={{ justifyContent: "space-between", minHeight: "64px" }}>
@@ -19,44 +18,45 @@ const Navbar: React.FC = () => {
           <Typography
             variant="h6"
             sx={{
-              color: "#333",
-              fontWeight: "600",
-              fontSize: "22px", // Increased size to match image
+              color: "#333", // Matches the dark color in the image
+              fontWeight: "600", // Matches the bold style
+              fontSize: "22px", // Matches the size in the image
             }}
           >
-            Jamii Cereals and Gen shop
+            Jamii Cereals and Gen shop // Matches the text in the image
           </Typography>
         </Box>
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <Typography sx={{ color: "#333", fontSize: "16px", mr: 0.5 }}>
-              Products
+              Products // Matches the text
             </Typography>
-            <KeyboardArrowDownIcon sx={{ color: "#333", fontSize: "18px" }} />
+            <KeyboardArrowDownIcon sx={{ color: "#333", fontSize: "18px" }} />{" "}
           </Box>
           <Box sx={{ display: "flex", alignItems: "center", mx: 3 }}>
             <Typography sx={{ color: "#333", fontSize: "16px", mr: 0.5 }}>
-              Company
+              Company // Matches the text
             </Typography>
-            <KeyboardArrowDownIcon sx={{ color: "#333", fontSize: "18px" }} />
+            <KeyboardArrowDownIcon sx={{ color: "#333", fontSize: "18px" }} />{" "}
           </Box>
           <Typography sx={{ color: "#333", fontSize: "16px", mr: 3 }}>
-            Frequently Asked Questions
+            Frequently Asked Questions // Matches the text, no arrow as in the
+            image
           </Typography>
           <Button
             variant="contained"
             sx={{
-              backgroundColor: "#556B2F",
-              color: "white",
-              textTransform: "none",
-              fontSize: "15px",
-              fontWeight: "normal",
-              padding: "8px 20px", // Adjusted padding to match image
-              borderRadius: "6px", // More rounded corners to match image
-              "&:hover": { backgroundColor: "#6B8E23" },
+              backgroundColor: "#556B2F", // Matches the dark green color
+              color: "white", // Matches the white text
+              textTransform: "none", // Matches the non-uppercase text
+              fontSize: "15px", // Matches the size
+              fontWeight: "normal", // Matches the weight
+              padding: "8px 20px", // Matches the padding
+              borderRadius: "6px", // Matches the rounded corners
+              "&:hover": { backgroundColor: "#6B8E23" }, // Hover effect matches
             }}
           >
-            Get in Touch
+            Get in Touch // Matches the text
           </Button>
         </Box>
       </Toolbar>
