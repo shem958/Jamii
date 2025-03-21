@@ -110,9 +110,9 @@ const DottedLine = styled(Box)({
 const CustomerAvatar = styled(Avatar)({
   width: "80px",
   height: "80px",
-  position: "absolute",
+  position: "relative",
   left: "180px",
-  top: "50%",
+  top: "130px",
   transform: "translateY(-50%)",
   border: "2px solid #ccc",
 });
