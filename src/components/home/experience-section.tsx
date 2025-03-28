@@ -8,7 +8,7 @@ import Image from "next/image";
 const SectionContainer = styled(Container)({
   paddingTop: "64px",
   paddingBottom: "64px",
-  backgroundColor: "#f8f5f0", // Light beige background
+  backgroundColor: "#f8f5f0",
   maxWidth: "100%",
   margin: "0 auto",
 });
@@ -19,7 +19,7 @@ const ContentWrapper = styled(Box)({
 });
 
 const YellowSection = styled(Box)({
-  backgroundColor: "#f8e6b5", // Light yellow background
+  backgroundColor: "#f8e6b5",
   borderRadius: "16px",
   display: "flex",
   overflow: "hidden",
@@ -49,15 +49,6 @@ const GreenCircle = styled(Box)({
   bottom: "-150px",
   right: "-150px",
   zIndex: 1,
-});
-
-const FreshBadge = styled(Box)({
-  display: "inline-flex",
-  alignItems: "center",
-  backgroundColor: "#f1f5eb",
-  padding: "10px 24px",
-  borderRadius: "30px",
-  marginTop: "20px",
 });
 
 const ExperienceSection: React.FC = () => {
@@ -90,23 +81,34 @@ const ExperienceSection: React.FC = () => {
         </YellowSection>
 
         <Grid container spacing={4} sx={{ mt: 4 }}>
-          <Grid item xs={12} md={12}>
+          <Grid item xs={12} md={8}>
+            {" "}
+            {/* Changed from md=12 to md=8 for 80% width */}
             <Typography
-              variant="h4"
-              component="h2"
+              variant="h1"
+              component="h1"
               sx={{
                 color: "#000",
                 fontSize: "2.5rem",
                 fontWeight: "bold",
                 lineHeight: "1.2",
+                mb: 1,
+              }}
+            >
+              Experience
+            </Typography>
+            <Typography
+              variant="h2"
+              component="h2"
+              sx={{
+                color: "#000",
+                fontSize: "2rem",
+                fontWeight: "bold",
+                lineHeight: "1.3",
                 mb: 2,
               }}
             >
-              Experience Convenient Shopping
-              <br />
-              for Dry Cereals at Jamii Cereals
-              <br />
-              and Gen Shop
+              Convenient Shopping for Dry Cereals at Jamii Cereals and Gen Shop
             </Typography>
             <Typography
               variant="body1"
@@ -122,22 +124,26 @@ const ExperienceSection: React.FC = () => {
               shopping with a delivery service across Nairobi or visit our store
               in Dagoretti Market.
             </Typography>
-            <FreshBadge>
-              <Typography
-                variant="h6"
-                component="span"
-                sx={{
-                  fontWeight: "bold",
-                  color: "#5A6B34",
-                  mr: 1,
-                }}
-              >
-                Fresh
-              </Typography>
-              <Typography variant="body1" component="span">
-                Products Delivered to Your Doorstep
-              </Typography>
-            </FreshBadge>
+            <Box
+              component="hr"
+              sx={{
+                border: "none",
+                height: "1px",
+                backgroundColor: "#ddd",
+                my: 3,
+              }}
+            />
+            <Typography
+              variant="h3"
+              component="h3"
+              sx={{
+                fontWeight: "bold",
+                color: "#000",
+                fontSize: "1.25rem",
+              }}
+            >
+              Fresh Products Delivered to Your Doorstep
+            </Typography>
           </Grid>
         </Grid>
       </ContentWrapper>
